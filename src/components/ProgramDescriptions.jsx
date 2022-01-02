@@ -24,7 +24,7 @@ function ProgramDescriptions() {
         Ex, amet quisquam eveniet vitae veniam placeat, distinctio eius 
         quaerat necessitatibus numquam sed, veritatis illo pariatur? Veniam 
         id ab aliquid voluptatibus dolore.`,
-      color: "#f0f1f6",
+      color: "#f0f4e6",
       image: process.env.PUBLIC_URL + "/program1.png",
     },
     {
@@ -33,16 +33,16 @@ function ProgramDescriptions() {
             Ex, amet quisquam eveniet vitae veniam placeat, distinctio eius 
             quaerat necessitatibus numquam sed, veritatis illo pariatur? Veniam 
             id ab aliquid voluptatibus dolore.`,
-      color: "#9b9f8e",
+      color: "#9cb58e",
       image: process.env.PUBLIC_URL + "/program2.png",
     },
     {
-      name: "Viktnedgång",
+      name: "Exempel Program Viktnedgång",
       description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
       Ex, amet quisquam eveniet vitae veniam placeat, distinctio eius 
       quaerat necessitatibus numquam sed, veritatis illo pariatur? Veniam 
       id ab aliquid voluptatibus dolore.`,
-      color: "#4b4f3f",
+      color: "#fdccdd",
       image: process.env.PUBLIC_URL + "/program3.png",
     },
   ];
