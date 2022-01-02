@@ -5,6 +5,7 @@ import AboutMe from "./components/AboutMe";
 import SocialMedia from "./components/SocialMedia";
 import Spacer from "./components/Spacer";
 import ProgramDescriptions from "./components/ProgramDescriptions";
+import TheProcess from "./components/TheProcess";
 const theme = createTheme({
   typography: {
     fontFamily: ["Merriweather Sans", "sans-serif"].join(","),
@@ -33,7 +34,10 @@ function Home() {
     <ThemeProvider theme={theme}>
       <React.Fragment>
         <PageAppBar />
+        <Spacer />
         <AboutMe />
+        <Spacer />
+        <TheProcess />
         <Spacer />
         <ProgramDescriptions />
         <Spacer />
