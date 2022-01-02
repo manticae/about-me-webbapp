@@ -4,6 +4,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import AboutMe from "./components/AboutMe";
 import SocialMedia from "./components/SocialMedia";
 import Spacer from "./components/Spacer";
+import ProgramDescriptions from "./components/ProgramDescriptions";
 const theme = createTheme({
   typography: {
     fontFamily: ["Merriweather Sans", "sans-serif"].join(","),
@@ -33,6 +34,8 @@ function Home() {
       <React.Fragment>
         <PageAppBar />
         <AboutMe />
+        <Spacer />
+        <ProgramDescriptions />
         <Spacer />
         <SocialMedia />
       </React.Fragment>
