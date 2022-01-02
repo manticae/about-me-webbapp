@@ -2,14 +2,16 @@ import * as React from "react";
 import PageAppBar from "./components/PageAppBar";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import AboutMe from "./components/AboutMe";
+import SocialMedia from "./components/SocialMedia";
+import Spacer from "./components/Spacer";
 const theme = createTheme({
   typography: {
     fontFamily: ["Merriweather Sans", "sans-serif"].join(","),
   },
   palette: {
     primary: {
-      // main: "#FDD982",
       main: "#FF7000",
+      contrastText: "#FFFFFF",
     },
     secondary: {
       light: "#0066ff",
@@ -31,6 +33,8 @@ function Home() {
       <React.Fragment>
         <PageAppBar />
         <AboutMe />
+        <Spacer />
+        <SocialMedia />
       </React.Fragment>
     </ThemeProvider>
   );

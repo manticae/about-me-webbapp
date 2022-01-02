@@ -48,7 +48,6 @@ function AboutMe() {
               flexDirection: "column",
               justifyContent: "space-evenly",
               alignSelf: "center",
-              //   backgroundColor: "#fdf5c9",
               height: "100%",
               width: "100%",
             }}
@@ -57,7 +56,7 @@ function AboutMe() {
               <Typography variant="h4">
                 En lång titel som verkligen poängterar din stil och ditt uppdrag
               </Typography>
-              <Typography variant="body1" sx={{ mt: 2, mx: 5 }}>
+              <Typography variant="body1" sx={{ mt: 2, mx: 3 }}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
                 aut eum fugit magnam reprehenderit, suscipit explicabo mollitia
                 consequatur repellendus beatae maxime eligendi cum accusantium
