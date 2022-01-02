@@ -10,7 +10,11 @@ function Program(props) {
         borderRadius: 20,
       }}
     >
-      <CardMedia component="img" image={props.item.image} />
+      <CardMedia
+        component="img"
+        image={props.item.image}
+        style={{ maxHeight: "400px" }}
+      />
       <CardContent>
         <Typography align="center" variant="h4">
           {props.item.name}
