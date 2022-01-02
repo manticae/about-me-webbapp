@@ -48,11 +48,11 @@ function ProgramDescriptions() {
   ];
   return (
     <Container maxWidth="xl">
-      <Grid container columns={16}>
+      <Grid container columns={32}>
         <Grid
           item
-          xs={16}
-          md={8}
+          xs={32}
+          md={16}
           style={{
             alignSelf: "center",
           }}
@@ -112,14 +112,15 @@ function ProgramDescriptions() {
             </CardActions>
           </Card>
         </Grid>
-        <Grid item xs={16} md={2}></Grid>
+        <Grid item xs={32} md={3}></Grid>
         <Grid
           item
           xs={16}
-          md={4}
+          md={10}
           style={{
             alignSelf: "center",
           }}
+          sx={{ display: { xs: "none", md: "block" } }}
         >
           <Carousel animation="slide" duration="1000" interval="10000">
             {items.map((item, i) => (
@@ -127,7 +128,7 @@ function ProgramDescriptions() {
             ))}
           </Carousel>
         </Grid>
-        <Grid item xs={16} md={2}></Grid>
+        <Grid item xs={32} md={3}></Grid>
       </Grid>
     </Container>
   );
