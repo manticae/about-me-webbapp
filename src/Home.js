@@ -7,6 +7,7 @@ import Spacer from "./components/Spacer";
 import ProgramDescriptions from "./components/ProgramDescriptions";
 import TheProcess from "./components/TheProcess";
 import MyStory from "./components/MyStory";
+import ContactMe from "./components/ContactMe";
 const theme = createTheme({
   typography: {
     fontFamily: ["Merriweather Sans", "sans-serif"].join(","),
@@ -41,6 +42,8 @@ function Home() {
         <TheProcess />
         <Spacer />
         <ProgramDescriptions />
+        <Spacer />
+        <ContactMe />
         <Spacer />
         <MyStory />
         <Spacer />
