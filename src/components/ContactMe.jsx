@@ -6,7 +6,7 @@ function ContactMe() {
   const [name, setName] = React.useState("");
   const [phoneNumber, setphoneNumber] = React.useState("");
   const [email, setEmail] = React.useState("");
-  const [motivation, setMotivation] = React.useState("");
+  const [message, setMessage] = React.useState("");
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -20,8 +20,8 @@ function ContactMe() {
     setEmail(event.target.value);
   };
 
-  const handleMotivationChange = (event) => {
-    setMotivation(event.target.value);
+  const handleMessageChange = (event) => {
+    setMessage(event.target.value);
   };
 
   const handleSubmit = (event) => {
@@ -30,7 +30,7 @@ function ContactMe() {
     console.log(name);
     console.log(phoneNumber);
     console.log(email);
-    console.log(motivation);
+    console.log(message);
   };
 
   return (
@@ -115,9 +115,9 @@ function ContactMe() {
               multiline
               minRows={3}
               maxRows={5}
-              label="Motivering"
-              value={motivation}
-              onChange={handleMotivationChange}
+              label="Meddelande"
+              value={message}
+              onChange={handleMessageChange}
               color="text"
             />
           </Grid>
