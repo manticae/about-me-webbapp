@@ -22,17 +22,17 @@ function MyStory() {
           }}
         >
           <video
-            width="100%"
-            height="100%"
             autoPlay
-            loop
             muted
+            loop
+            playsinline
+            src={video}
             style={{
+              width: "100%",
+              height: "100%",
               objectFit: "cover",
             }}
-          >
-            <source src={video} type="video/mp4" />
-          </video>
+          ></video>
         </Grid>
         <Grid
           item

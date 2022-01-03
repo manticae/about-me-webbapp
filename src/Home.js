@@ -9,6 +9,7 @@ import TheProcess from "./components/TheProcess";
 import MyStory from "./components/MyStory";
 import ContactMe from "./components/ContactMe";
 import ProgramMiscellaneous from "./components/ProgramMiscellaneous";
+import PageFooter from "./components/PageFooter";
 const theme = createTheme({
   typography: {
     fontFamily: ["Merriweather Sans", "sans-serif"].join(","),
@@ -51,6 +52,8 @@ function Home() {
         <MyStory />
         <Spacer />
         <SocialMedia />
+        <Spacer />
+        <PageFooter />
       </React.Fragment>
     </ThemeProvider>
   );
