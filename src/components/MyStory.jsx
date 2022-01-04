@@ -25,7 +25,7 @@ function MyStory() {
             autoPlay
             muted
             loop
-            playsinline
+            playsInline
             src={video}
             style={{
               width: "100%",
