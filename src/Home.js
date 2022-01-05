@@ -10,6 +10,7 @@ import MyStory from "./components/MyStory";
 import ContactMe from "./components/ContactMe";
 import ProgramMiscellaneous from "./components/ProgramMiscellaneous";
 import PageFooter from "./components/PageFooter";
+import FAQ from "./components/FAQ";
 const theme = createTheme({
   typography: {
     fontFamily: ["Merriweather Sans", "sans-serif"].join(","),
@@ -52,6 +53,8 @@ function Home() {
         <MyStory />
         <Spacer />
         <SocialMedia />
+        <Spacer />
+        <FAQ />
         <Spacer />
         <PageFooter />
       </React.Fragment>
