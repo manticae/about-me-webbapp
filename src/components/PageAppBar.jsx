@@ -10,6 +10,7 @@ import {
   Container,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { scroller } from "react-scroll";
 
 function PageAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -23,11 +24,21 @@ function PageAppBar() {
   };
 
   const handleHowItWorksClick = () => {
-    console.log("Så funkar det!");
+    handleCloseNavMenu();
+    scroller.scrollTo("the-process-section", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
   };
 
   const handleContactMeClick = () => {
-    console.log("Kontakta mig!");
+    handleCloseNavMenu();
+    scroller.scrollTo("contact-me-section", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
   };
   return (
     <Box sx={{ flexGrow: 1 }}>

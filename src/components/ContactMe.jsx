@@ -34,7 +34,7 @@ function ContactMe() {
   };
 
   return (
-    <Container maxWidth="sm" sx={{ py: 2 }}>
+    <Container name="contact-me-section" maxWidth="sm" sx={{ py: 2 }}>
       <Typography
         align="center"
         variant="h4"

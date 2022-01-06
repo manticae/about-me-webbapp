@@ -11,9 +11,14 @@ import {
 import Carousel from "react-material-ui-carousel";
 import CheckIcon from "@mui/icons-material/Check";
 import Program from "./Program";
+import { scroller } from "react-scroll";
 
 const handleContactMeClick = () => {
-  console.log("Kontakta mig!");
+  scroller.scrollTo("contact-me-section", {
+    duration: 800,
+    delay: 0,
+    smooth: "easeInOutQuart",
+  });
 };
 
 function ProgramDescriptions() {
