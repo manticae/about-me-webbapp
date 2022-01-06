@@ -13,6 +13,7 @@ function TheProcess() {
 
   return (
     <Box
+      name="the-process-section"
       style={{
         display: "flex",
         flexGrow: 1,
@@ -45,7 +46,7 @@ function TheProcess() {
               Så Här Fungerar Det
             </Typography>
           </Grid>
-          <Grid item xs={10} md={4}>
+          <Grid item xs={14} md={4}>
             <Card
               elevation={0}
               style={{
@@ -63,7 +64,7 @@ function TheProcess() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={10} md={4} style={{ alignSelf: "center" }}>
+          <Grid item xs={14} md={4} style={{ alignSelf: "center" }}>
             <Card
               elevation={0}
               style={{
@@ -82,7 +83,7 @@ function TheProcess() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={10} md={4}>
+          <Grid item xs={14} md={4}>
             <Card
               elevation={0}
               style={{
