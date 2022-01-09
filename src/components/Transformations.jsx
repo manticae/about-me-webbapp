@@ -29,7 +29,6 @@ function Transformations() {
   return (
     <Box
       name="the-process-section"
-      bgcolor="primary.main"
       style={{
         flexGrow: 1,
         minHeight: "600px",
