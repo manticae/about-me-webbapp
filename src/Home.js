@@ -11,6 +11,8 @@ import ContactMe from "./components/ContactMe";
 import ProgramMiscellaneous from "./components/ProgramMiscellaneous";
 import PageFooter from "./components/PageFooter";
 import FAQ from "./components/FAQ";
+import Transformations from "./components/Transformations";
+
 const theme = createTheme({
   typography: {
     fontFamily: ["Merriweather Sans", "sans-serif"].join(","),
@@ -49,6 +51,8 @@ function Home() {
         <ProgramMiscellaneous />
         <Spacer />
         <ContactMe />
+        <Spacer />
+        <Transformations />
         <Spacer />
         <MyStory />
         <Spacer />

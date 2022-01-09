@@ -22,7 +22,7 @@ const handleContactMeClick = () => {
 };
 
 function ProgramDescriptions() {
-  var items = [
+  const items = [
     {
       name: "Exempel Program Stryka",
       description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
