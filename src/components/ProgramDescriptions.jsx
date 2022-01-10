@@ -7,6 +7,7 @@ import {
   Typography,
   CardActions,
   Button,
+  Box,
 } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 import CheckIcon from "@mui/icons-material/Check";
@@ -35,9 +36,7 @@ function ProgramDescriptions() {
     {
       name: "Exempel Program Rörlighet",
       description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-            Ex, amet quisquam eveniet vitae veniam placeat, distinctio eius 
-            quaerat necessitatibus numquam sed, veritatis illo pariatur? Veniam 
-            id ab aliquid voluptatibus dolore.`,
+            Ex, amet quisquam eveniet vitae veniam placeat.`,
       color: "#9cb58e",
       image: process.env.PUBLIC_URL + "/program2.png",
     },
@@ -53,11 +52,11 @@ function ProgramDescriptions() {
   ];
   return (
     <Container maxWidth="xl">
-      <Grid container columns={32}>
+      <Grid container columns={16} spacing={2}>
         <Grid
           item
-          xs={32}
-          md={16}
+          xs={16}
+          md={8}
           style={{
             alignSelf: "center",
           }}
@@ -117,23 +116,27 @@ function ProgramDescriptions() {
             </CardActions>
           </Card>
         </Grid>
-        <Grid item xs={32} md={3}></Grid>
         <Grid
           item
           xs={16}
-          md={10}
+          md={8}
           style={{
             alignSelf: "center",
           }}
-          sx={{ display: { xs: "none", md: "block" } }}
         >
-          <Carousel animation="slide" duration="1000" interval="10000">
+          <Carousel
+            animation="slide"
+            duration="1000"
+            interval="10000"
+            navButtonsAlwaysVisible="true"
+          >
             {items.map((item, i) => (
-              <Program key={i} item={item} />
+              <Box key={i} px={2}>
+                <Program item={item} />
+              </Box>
             ))}
           </Carousel>
         </Grid>
-        <Grid item xs={32} md={3}></Grid>
       </Grid>
     </Container>
   );

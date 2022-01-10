@@ -1,27 +1,58 @@
 import * as React from "react";
-import { Card, CardContent, Typography, CardMedia } from "@mui/material";
+import { Card, CardContent, Typography, CardMedia, Box } from "@mui/material";
 
 function Program(props) {
   return (
-    <Card
+    <Box
+      height={"550px"}
       style={{
-        height: "550px",
-        backgroundColor: props.item.color,
-        borderRadius: 20,
+        display: "flex",
+        alignItems: "center",
       }}
     >
-      <CardMedia
-        component="img"
-        image={props.item.image}
-        style={{ maxHeight: "400px" }}
-      />
-      <CardContent>
-        <Typography align="center" variant="h4">
-          {props.item.name}
-        </Typography>
-        <Typography variant="body1">{props.item.description}</Typography>
-      </CardContent>
-    </Card>
+      <Box
+        bgcolor={props.item.color}
+        height={"500px"}
+        style={{
+          flexGrow: 1,
+
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <Box
+          height={"350px"}
+          bgcolor={props.item.color}
+          style={{
+            flexGrow: 1,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "end",
+            backgroundRepeat: "no-repeat",
+            backgroundImage: `url(${props.item.image})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <Card
+            style={{
+              top: "0px",
+              left: "2rem",
+              maxWidth: "250px",
+              height: "100%",
+              position: "absolute",
+            }}
+          >
+            <CardContent>
+              <Typography align="center" variant="h5">
+                {props.item.name}
+              </Typography>
+              <Typography variant="body1">{props.item.description}</Typography>
+            </CardContent>
+          </Card>
+        </Box>
+      </Box>
+    </Box>
   );
 }
 
