@@ -37,14 +37,14 @@ function ProgramMiscellaneous() {
               variant="h6"
               style={{ paddingTop: "15px" }}
             >
-              Mailkommunikation
+              Mail
             </Typography>
             <Typography
               align="center"
               variant="body2"
               style={{ paddingTop: "15px" }}
             >
-              Mail kommunikation tillgängligt hela tiden med svar innom en dag
+              Mail-kommunikation tillgängligt hela tiden med svar innom en dag
             </Typography>
           </Card>
         </Grid>
