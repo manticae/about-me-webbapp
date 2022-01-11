@@ -2,7 +2,7 @@
   "name": "about-me-webbapp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://manticae.github.io",
+  "homepage": "https://manticae.github.io/about-me-webbapp",
   "dependencies": {
     "-": "0.0.1",
     "@emotion/react": "^11.7.1",
