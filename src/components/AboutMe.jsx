@@ -57,6 +57,7 @@ function AboutMe() {
               alignSelf: "center",
               height: "100%",
               width: "100%",
+              // backgroundColor: "#eac6b7",
             }}
           >
             <CardContent>

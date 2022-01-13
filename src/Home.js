@@ -19,7 +19,8 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: "#6cc5d5",
+      // main: "#6cc5d5",
+      main: "#eac6b7",
       contrastText: "#FFFFFF",
     },
     secondary: {
@@ -43,22 +44,22 @@ function Home() {
         <PageAppBar />
         <Spacer />
         <AboutMe />
-        <Spacer />
-        <TheProcess />
+        {/* <Spacer /> */}
+        {/* <TheProcess /> */}
         <Spacer />
         <ProgramDescriptions />
         <Spacer />
         <ProgramMiscellaneous />
         <Spacer />
         <ContactMe />
-        <Spacer />
-        <Transformations />
+        {/* <Spacer /> */}
+        {/* <Transformations /> */}
         <Spacer />
         <MyStory />
         <Spacer />
         <SocialMedia />
-        <Spacer />
-        <FAQ />
+        {/* <Spacer /> */}
+        {/* <FAQ /> */}
         <Spacer />
         <PageFooter />
       </React.Fragment>
