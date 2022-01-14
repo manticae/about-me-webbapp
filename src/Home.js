@@ -42,7 +42,6 @@ function Home() {
     <ThemeProvider theme={theme}>
       <React.Fragment>
         <PageAppBar />
-        <Spacer />
         <AboutMe />
         {/* <Spacer /> */}
         {/* <TheProcess /> */}

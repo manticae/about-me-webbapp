@@ -21,70 +21,70 @@ const handleContactMeClick = () => {
 function AboutMe() {
   const image = process.env.PUBLIC_URL + "/profilePicture.png";
   return (
-    <Container maxWidth="xl">
-      <Grid container columns={16}>
-        <Grid
-          item
-          xs={16}
-          md={8}
+    <Grid container columns={16}>
+      <Grid
+        item
+        xs={16}
+        md={8}
+        style={{
+          alignSelf: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundImage: `url(${image})`,
+          height: "580px",
+          width: "720px",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      ></Grid>
+      <Grid
+        item
+        xs={16}
+        md={8}
+        style={{
+          alignSelf: "center",
+          height: "580px",
+          width: "720px",
+        }}
+      >
+        <Card
+          elevation={0}
+          square
           style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-evenly",
             alignSelf: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundImage: `url(${image})`,
-            height: "580px",
-            width: "720px",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        ></Grid>
-        <Grid
-          item
-          xs={16}
-          md={8}
-          style={{
-            alignSelf: "center",
-            height: "580px",
-            width: "720px",
+            height: "100%",
+            width: "100%",
+            background: "rgb(255,255,255)",
+            background:
+              "linear-gradient(39deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 20%, rgba(234,198,183,1) 100%)",
           }}
         >
-          <Card
-            elevation={0}
-            square
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-evenly",
-              alignSelf: "center",
-              height: "100%",
-              width: "100%",
-              // backgroundColor: "#eac6b7",
-            }}
-          >
-            <CardContent>
-              <Typography variant="h4">
-                En lång titel som verkligen poängterar din stil och ditt uppdrag
-              </Typography>
-              <Typography variant="body1" sx={{ mt: 2, mx: 3 }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-                aut eum fugit magnam reprehenderit, suscipit explicabo mollitia
-                consequatur repellendus beatae maxime eligendi cum accusantium
-                tempore nostrum numquam! Minima, tempore quis.re
-              </Typography>
-            </CardContent>
+          <CardContent>
+            <Typography variant="h4">
+              En lång titel som verkligen poängterar din stil och ditt uppdrag
+            </Typography>
+            <Typography variant="body1" sx={{ mt: 2, mx: 3 }}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
+              aut eum fugit magnam reprehenderit, suscipit explicabo mollitia
+              consequatur repellendus beatae maxime eligendi cum accusantium
+              tempore nostrum numquam! Minima, tempore quis.re
+            </Typography>
+          </CardContent>
 
-            <CardActions sx={{ ml: 5 }}>
-              <Button
-                onClick={handleContactMeClick}
-                size="large"
-                variant="contained"
-              >
-                Kontakta Mig
-              </Button>
-            </CardActions>
-          </Card>
-        </Grid>
+          <CardActions sx={{ ml: 5 }}>
+            <Button
+              onClick={handleContactMeClick}
+              size="large"
+              variant="contained"
+            >
+              Kontakta Mig
+            </Button>
+          </CardActions>
+        </Card>
       </Grid>
-    </Container>
+    </Grid>
   );
 }
 

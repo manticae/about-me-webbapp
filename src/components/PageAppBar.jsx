@@ -6,6 +6,7 @@ import {
   Toolbar,
   Box,
   Menu,
+  Grid,
   IconButton,
   Container,
 } from "@mui/material";
@@ -41,15 +42,68 @@ function PageAppBar() {
     });
   };
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" color="white" elevation={0}>
-        <Container maxWidth="xl">
-          <Toolbar disableGutters>
-            <Typography variant="h4" noWrap sx={{ flexGrow: 1 }}>
-              LOGO
+    <AppBar position="absolute" color="transparent" elevation={0}>
+      <Toolbar>
+        <Box
+          width={1}
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+          }}
+        >
+          <Box width={1 / 5}></Box>
+          <Box width={1 / 5}>
+            <Typography align="center" marginTop={2} variant="h3">
+              Hanna Ljungsten
             </Typography>
-
-            <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          </Box>
+          <Box width={1 / 5} sx={{ display: { xs: "none", md: "flex" } }}>
+            <Button
+              variant="text"
+              color="textColor"
+              onClick={handleHowItWorksClick}
+            >
+              Så Funkar Det
+            </Button>
+            <Button
+              variant="text"
+              color="textColor"
+              onClick={handleContactMeClick}
+            >
+              Kontakta Mig
+            </Button>
+          </Box>
+          <Box width={1 / 5} sx={{ display: { xs: "flex", md: "none" } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: "block", md: "none" },
+              }}
+            >
               <Button
                 variant="text"
                 color="textColor"
@@ -64,57 +118,11 @@ function PageAppBar() {
               >
                 Kontakta Mig
               </Button>
-            </Box>
-
-            <Box sx={{ display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: "block", md: "none" },
-                }}
-              >
-                <Button
-                  variant="text"
-                  color="textColor"
-                  onClick={handleHowItWorksClick}
-                >
-                  Så Funkar Det
-                </Button>
-                <Button
-                  variant="text"
-                  color="textColor"
-                  onClick={handleContactMeClick}
-                >
-                  Kontakta Mig
-                </Button>
-              </Menu>
-            </Box>
-          </Toolbar>
-        </Container>
-      </AppBar>
-    </Box>
+            </Menu>
+          </Box>
+        </Box>
+      </Toolbar>
+    </AppBar>
   );
 }
 

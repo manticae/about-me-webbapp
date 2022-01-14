@@ -7,6 +7,11 @@ import {
   Box,
   Card,
   CardContent,
+  Radio,
+  RadioGroup,
+  FormControl,
+  FormLabel,
+  FormControlLabel,
 } from "@mui/material";
 import Spacer from "./Spacer";
 
@@ -29,8 +34,9 @@ function ContactMe() {
         }}
       >
         <Grid container columns={12} alignItems="center">
-          <Grid item md={1}></Grid>
-          <Grid item xs={12} md={5}>
+          <Grid item md={2}></Grid>
+
+          <Grid item md={8}>
             <ContactMeCard />
           </Grid>
         </Grid>
@@ -91,85 +97,101 @@ function ContactMeCard() {
         <Typography
           align="center"
           variant="h4"
-          sx={{ display: { xs: "none", md: "block" }, py: 1 }}
+          sx={{ display: "block", pb: 2 }}
         >
-          Kontakta mig
-        </Typography>
-        <Typography
-          align="center"
-          variant="h5"
-          sx={{ display: { xs: "block", md: "none" } }}
-        >
-          Kontakta mig
+          Intresseanmälan
         </Typography>
 
-        <Spacer />
         <form onSubmit={handleSubmit}>
           <Grid container columns={12} spacing={2}>
-            <Grid
-              item
-              xs={12}
-              md={6}
-              style={{
-                alignSelf: "center",
-              }}
-            >
+            <Grid item xs={12} md={4}>
               <TextField
                 fullWidth
-                label="Namn"
+                label="Förnamn"
                 value={name}
                 onChange={handleNameChange}
                 color="text"
+                margin="dense"
               />
-            </Grid>
-
-            <Grid
-              item
-              xs={12}
-              md={6}
-              style={{
-                alignSelf: "center",
-              }}
-            >
+              <TextField
+                fullWidth
+                label="Efternamn"
+                value={name}
+                onChange={handleNameChange}
+                color="text"
+                margin="dense"
+              />
               <TextField
                 fullWidth
                 label="Telefonnummer"
                 value={phoneNumber}
                 onChange={handlePhoneNumberChange}
                 color="text"
+                margin="dense"
               />
-            </Grid>
-
-            <Grid
-              item
-              xs={12}
-              md={6}
-              style={{
-                alignSelf: "center",
-              }}
-            >
               <TextField
                 fullWidth
                 label="E-post"
                 value={email}
                 onChange={handleEmailChange}
                 color="text"
+                margin="dense"
               />
             </Grid>
-            <Grid
-              item
-              xs={12}
-              md={12}
-              style={{
-                alignSelf: "center",
-              }}
-            >
+
+            <Grid item xs={12} md={4}>
+              <FormControl>
+                <FormLabel>Hur många gånger kan du träna i veckan?</FormLabel>
+                <RadioGroup aria-label="gender" name="antalGånger">
+                  <FormControlLabel
+                    value="1"
+                    control={<Radio />}
+                    label="1-2 gånger"
+                  />
+                  <FormControlLabel
+                    value="2"
+                    control={<Radio />}
+                    label="2-4 gånger"
+                  />
+                  <FormControlLabel
+                    value="3"
+                    control={<Radio />}
+                    label="4-6 gånger"
+                  />
+                </RadioGroup>
+              </FormControl>
+            </Grid>
+
+            <Grid item xs={12} md={4}>
+              <FormControl>
+                <FormLabel>Hur många måltider vill du äta per dygn?</FormLabel>
+                <RadioGroup aria-label="gender" name="antalGånger">
+                  <FormControlLabel
+                    value="1"
+                    control={<Radio />}
+                    label="1-2 måltider"
+                  />
+                  <FormControlLabel
+                    value="2"
+                    control={<Radio />}
+                    label="2-3 måltider"
+                  />
+                  <FormControlLabel
+                    value="3"
+                    control={<Radio />}
+                    label="4+ måltider"
+                  />
+                </RadioGroup>
+              </FormControl>
+            </Grid>
+
+            <Grid item xs={12} md={12}>
               <TextField
                 fullWidth
                 multiline
                 minRows={3}
                 maxRows={5}
-                label="Meddelande"
+                label="Vad kan jag som coach hjälpa dig med?"
                 value={message}
                 onChange={handleMessageChange}
                 color="text"
