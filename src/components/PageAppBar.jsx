@@ -8,6 +8,7 @@ import {
   Menu,
   Grid,
   IconButton,
+  MenuItem,
   Container,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -42,163 +43,86 @@ function PageAppBar() {
     });
   };
   return (
-    <Box>
-      {/* Phone */}
-      <AppBar
-        position="absolute"
-        color="transparent"
-        elevation="0"
-        sx={{
-          display: { xs: "flex", md: "none" },
-          padding: "10px",
-        }}
-      >
-        <Toolbar>
+    <AppBar position="absolute" color="transparent" elevation="0">
+      <Toolbar>
+        <Box
+          sx={{
+            display: { xs: "flex", md: "none" },
+            flexGrow: 1,
+            flexBasis: 0,
+          }}
+        >
           <IconButton
             size="large"
             aria-controls="menu-appbar"
             aria-haspopup="true"
             onClick={handleOpenNavMenu}
             color="inherit"
-            sx={{ flexGrow: 1, justifyContent: "start", padding: "0" }}
+            sx={{ padding: "0" }}
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            align="center"
-            variant="h5"
-            sx={{
-              width: "170px",
-              lineHeight: "1",
-              letterSpacing: "2px",
-              fontWeight: "bold",
-            }}
-          >
-            HANNA LJUNGSTEN
-          </Typography>
-          <Box sx={{ flexGrow: 1 }}></Box>
           <Menu
             id="menu-appbar"
             anchorEl={anchorElNav}
             anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "left",
+              vertical: "top",
+              horizontal: "right",
             }}
             keepMounted
             transformOrigin={{
               vertical: "top",
-              horizontal: "left",
+              horizontal: "right",
             }}
             open={Boolean(anchorElNav)}
             onClose={handleCloseNavMenu}
-            sx={{
-              display: { xs: "block", md: "none" },
-            }}
           >
-            <Button
-              variant="text"
-              color="textColor"
-              onClick={handleHowItWorksClick}
-            >
-              Så Funkar Det
-            </Button>
-            <Button
-              variant="text"
-              color="textColor"
-              onClick={handleContactMeClick}
-            >
-              Kontakta Mig
-            </Button>
+            <MenuItem onClick={handleContactMeClick}>Intresseanmälan</MenuItem>
           </Menu>
-        </Toolbar>
-        <AppBar></AppBar>
-      </AppBar>
-      {/* Website */}
-      <AppBar
-        position="absolute"
-        color="transparent"
-        elevation={0}
-        sx={{ display: { xs: "none", md: "flex" } }}
-      >
-        <Toolbar>
-          <Box
-            width={1}
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-evenly",
-              alignItems: "center",
-            }}
-          >
-            <Box width={1 / 5}></Box>
-            <Box width={1 / 5}>
-              <Typography align="center" marginTop={2} variant="h3">
-                Hanna Ljungsten
-              </Typography>
-            </Box>
-            <Box width={1 / 5}>
-              <Button
-                variant="text"
-                color="textColor"
-                onClick={handleHowItWorksClick}
-              >
-                Så Funkar Det
-              </Button>
-              <Button
-                variant="text"
-                color="textColor"
-                onClick={handleContactMeClick}
-              >
-                Kontakta Mig
-              </Button>
-            </Box>
-            <Box>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-              >
-                <Button
-                  variant="text"
-                  color="textColor"
-                  onClick={handleHowItWorksClick}
-                >
-                  Så Funkar Det
-                </Button>
-                <Button
-                  variant="text"
-                  color="textColor"
-                  onClick={handleContactMeClick}
-                >
-                  Kontakta Mig
-                </Button>
-              </Menu>
-            </Box>
-          </Box>
-        </Toolbar>
-        <AppBar></AppBar>
-      </AppBar>
-    </Box>
+        </Box>
+        <Box
+          sx={{
+            display: { xs: "none", md: "flex" },
+            flexGrow: 1,
+            flexBasis: 0,
+          }}
+        >
+          <Button variant="outlined" onClick={handleContactMeClick}>
+            Intresseanmälan
+          </Button>
+        </Box>
+
+        <Typography
+          align="center"
+          variant="h5"
+          sx={{
+            width: "170px",
+            lineHeight: "1",
+            letterSpacing: "2px",
+            fontWeight: "bold",
+            display: { xs: "flex", md: "none" },
+          }}
+        >
+          HANNA LJUNGSTEN
+        </Typography>
+        <Typography
+          align="center"
+          variant="h4"
+          mt="10px"
+          sx={{
+            width: "320px",
+            lineHeight: "1",
+            letterSpacing: "5px",
+            fontWeight: "bold",
+            display: { xs: "none", md: "flex" },
+          }}
+        >
+          HANNA LJUNGSTEN
+        </Typography>
+
+        <Box sx={{ flexGrow: 1, flexBasis: 0 }}></Box>
+      </Toolbar>
+    </AppBar>
   );
 }
 
