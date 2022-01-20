@@ -1,17 +1,15 @@
-import * as React from "react";
+import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar,
-  Button,
-  Typography,
-  Toolbar,
   Box,
-  Menu,
-  Grid,
+  Button,
   IconButton,
+  Menu,
   MenuItem,
-  Container,
+  Toolbar,
+  Typography,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import * as React from "react";
 import { scroller } from "react-scroll";
 
 function PageAppBar() {
@@ -98,23 +96,8 @@ function PageAppBar() {
           sx={{
             width: "170px",
             lineHeight: "1",
-            letterSpacing: "2px",
+            letterSpacing: { xs: "2px", md: "5px" },
             fontWeight: "bold",
-            display: { xs: "flex", md: "none" },
-          }}
-        >
-          HANNA LJUNGSTEN
-        </Typography>
-        <Typography
-          align="center"
-          variant="h4"
-          mt="10px"
-          sx={{
-            width: "320px",
-            lineHeight: "1",
-            letterSpacing: "5px",
-            fontWeight: "bold",
-            display: { xs: "none", md: "flex" },
           }}
         >
           HANNA LJUNGSTEN

@@ -1,13 +1,12 @@
-import * as React from "react";
 import {
-  Container,
-  Grid,
-  Card,
-  CardContent,
-  Typography,
-  CardActions,
   Button,
+  Card,
+  CardActions,
+  CardContent,
+  Grid,
+  Typography,
 } from "@mui/material";
+import * as React from "react";
 import { scroller } from "react-scroll";
 
 const handleContactMeClick = () => {
@@ -35,11 +34,12 @@ function AboutMe() {
           backgroundPosition: "center",
         }}
       ></Grid>
-      <Grid item md={1}>
+      <Grid item xs={2} md={1}>
         <Card
           elevation="0"
           square
           sx={{
+            px: { xs: "0", md: "75px" },
             height: { xs: "auto", md: "100vh" },
             display: "flex",
             flexDirection: "column",
@@ -54,12 +54,11 @@ function AboutMe() {
             <Typography
               variant="h2"
               color="white.main"
-              mx={10}
               sx={{ fontWeight: "bold", letterSpacing: "2px" }}
             >
               Dags Att Förändra Ditt Liv
             </Typography>
-            <Typography variant="body1" mx={10} mt={2}>
+            <Typography variant="body1" mt={2}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
               aut eum fugit magnam reprehenderit, suscipit explicabo mollitia
               consequatur repellendus beatae maxime eligendi cum accusantium
@@ -67,7 +66,7 @@ function AboutMe() {
             </Typography>
           </CardContent>
 
-          <CardActions sx={{ mx: 10, my: 2 }}>
+          <CardActions sx={{ my: 2, justifyContent: "center" }}>
             <Button
               onClick={handleContactMeClick}
               size="large"
