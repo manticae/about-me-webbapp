@@ -1,13 +1,12 @@
-import * as React from "react";
 import {
-  Container,
-  Grid,
-  Card,
-  CardContent,
-  Typography,
-  CardActions,
   Button,
+  Card,
+  CardActions,
+  CardContent,
+  Grid,
+  Typography,
 } from "@mui/material";
+import * as React from "react";
 import { scroller } from "react-scroll";
 
 const handleContactMeClick = () => {
@@ -21,51 +20,46 @@ const handleContactMeClick = () => {
 function AboutMe() {
   const image = process.env.PUBLIC_URL + "/profilePicture.png";
   return (
-    <Grid container columns={16}>
+    <Grid container columns={2}>
       <Grid
         item
-        xs={16}
-        md={8}
+        xs={2}
+        md={1}
         style={{
-          alignSelf: "center",
           backgroundRepeat: "no-repeat",
-          backgroundImage: `url(${image})`,
-          height: "580px",
-          width: "720px",
+          backgroundImage: `linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1)),
+          url(${image})`,
+          height: "100vh",
+
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       ></Grid>
-      <Grid
-        item
-        xs={16}
-        md={8}
-        style={{
-          alignSelf: "center",
-          height: "580px",
-          width: "720px",
-        }}
-      >
+      <Grid item xs={2} md={1}>
         <Card
-          elevation={0}
+          elevation="0"
           square
-          style={{
+          sx={{
+            px: "5vw",
+            height: { xs: "auto", md: "100vh" },
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-evenly",
+            justifyContent: "center",
             alignSelf: "center",
-            height: "100%",
-            width: "100%",
-            background: "rgb(255,255,255)",
+            background: "rgb(222,167,144)",
             background:
-              "linear-gradient(39deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 20%, rgba(234,198,183,1) 100%)",
+              "linear-gradient(180deg, rgba(222,167,144,1) 0%, rgba(234,198,183,1) 70%, rgba(255,255,255,1) 100%)",
           }}
         >
           <CardContent>
-            <Typography variant="h4">
-              En lång titel som verkligen poängterar din stil och ditt uppdrag
+            <Typography
+              variant="h2"
+              color="white.main"
+              sx={{ fontWeight: "bold", letterSpacing: "2px" }}
+            >
+              Dags Att Förändra Ditt Liv
             </Typography>
-            <Typography variant="body1" sx={{ mt: 2, mx: 3 }}>
+            <Typography variant="body1" mt={2}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
               aut eum fugit magnam reprehenderit, suscipit explicabo mollitia
               consequatur repellendus beatae maxime eligendi cum accusantium
@@ -73,13 +67,17 @@ function AboutMe() {
             </Typography>
           </CardContent>
 
-          <CardActions sx={{ ml: 5 }}>
+          <CardActions sx={{ my: 2, justifyContent: "center" }}>
             <Button
               onClick={handleContactMeClick}
               size="large"
               variant="contained"
+              fullWidth
+              sx={{
+                py: "15px",
+              }}
             >
-              Kontakta Mig
+              Intresseanmälan
             </Button>
           </CardActions>
         </Card>
