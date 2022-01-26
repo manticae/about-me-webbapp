@@ -13,68 +13,11 @@ function SocialMedia() {
 
   return (
     <Container maxWidth="md">
-      <Typography align="center" variant="h4">
-        Följ min resa på Instagram
-      </Typography>
-
       <Box textAlign="center" sx={{ my: 2 }}>
         <Button onClick={handleInstagramClick} startIcon={<InstagramIcon />}>
           Instagram
         </Button>
       </Box>
-
-      <Grid container columns={12}>
-        <Grid
-          onClick={handleInstagramClick}
-          item
-          xs={12}
-          md={4}
-          style={{
-            cursor: "pointer",
-            alignSelf: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundImage: `url(${instagramPost1})`,
-            height: "294px",
-            width: "237px",
-            backgroundSize: "contain",
-            backgroundPosition: "center",
-          }}
-        ></Grid>
-
-        <Grid
-          onClick={handleInstagramClick}
-          item
-          md={4}
-          sx={{ display: { xs: "none", md: "flex" } }}
-          style={{
-            cursor: "pointer",
-            alignSelf: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundImage: `url(${instagramPost2})`,
-            height: "294px",
-            width: "237px",
-            backgroundSize: "contain",
-            backgroundPosition: "center",
-          }}
-        ></Grid>
-
-        <Grid
-          onClick={handleInstagramClick}
-          item
-          md={4}
-          sx={{ display: { xs: "none", md: "flex" } }}
-          style={{
-            cursor: "pointer",
-            alignSelf: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundImage: `url(${instagramPost3})`,
-            height: "294px",
-            width: "237px",
-            backgroundSize: "contain",
-            backgroundPosition: "center",
-          }}
-        ></Grid>
-      </Grid>
     </Container>
   );
 }

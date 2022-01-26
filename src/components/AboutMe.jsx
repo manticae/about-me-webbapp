@@ -27,7 +27,8 @@ function AboutMe() {
         md={1}
         style={{
           backgroundRepeat: "no-repeat",
-          backgroundImage: `url(${image})`,
+          backgroundImage: `linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1)),
+          url(${image})`,
           height: "100vh",
 
           backgroundSize: "cover",
@@ -39,15 +40,15 @@ function AboutMe() {
           elevation="0"
           square
           sx={{
-            px: { xs: "0", md: "75px" },
+            px: "5vw",
             height: { xs: "auto", md: "100vh" },
             display: "flex",
             flexDirection: "column",
-            justifyContent: "flex-end",
+            justifyContent: "center",
             alignSelf: "center",
             background: "rgb(222,167,144)",
             background:
-              "linear-gradient(0deg, rgba(222,167,144,1) 0%, rgba(234,198,183,1) 100%)",
+              "linear-gradient(180deg, rgba(222,167,144,1) 0%, rgba(234,198,183,1) 70%, rgba(255,255,255,1) 100%)",
           }}
         >
           <CardContent>
@@ -71,6 +72,10 @@ function AboutMe() {
               onClick={handleContactMeClick}
               size="large"
               variant="contained"
+              fullWidth
+              sx={{
+                py: "15px",
+              }}
             >
               Intresseanmälan
             </Button>

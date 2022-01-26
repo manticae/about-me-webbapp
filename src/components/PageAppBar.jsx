@@ -75,7 +75,9 @@ function PageAppBar() {
             open={Boolean(anchorElNav)}
             onClose={handleCloseNavMenu}
           >
-            <MenuItem onClick={handleContactMeClick}>Intresseanmälan</MenuItem>
+            <MenuItem onClit stack={handleContactMeClick}>
+              Intresseanmälan
+            </MenuItem>
           </Menu>
         </Box>
         <Box
