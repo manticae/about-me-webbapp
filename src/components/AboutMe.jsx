@@ -27,7 +27,7 @@ function AboutMe() {
         md={1}
         style={{
           backgroundRepeat: "no-repeat",
-          backgroundImage: `linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1)),
+          backgroundImage: `
           url(${image})`,
           height: "100vh",
 
@@ -48,7 +48,7 @@ function AboutMe() {
             alignSelf: "center",
             background: "rgb(222,167,144)",
             background:
-              "linear-gradient(180deg, rgba(222,167,144,1) 0%, rgba(234,198,183,1) 70%, rgba(255,255,255,1) 100%)",
+              "linear-gradient(0deg, rgba(222,167,144,1) 0%, rgba(234,198,183,1) 100%)",
           }}
         >
           <CardContent>
