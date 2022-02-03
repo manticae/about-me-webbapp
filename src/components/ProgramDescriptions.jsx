@@ -73,8 +73,7 @@ function ProgramDescriptions() {
           >
             <CardContent>
               <Typography variant="h4">
-                En mycket lång titel om de program som du erbjuder och hur det
-                till exempel kan fungera
+                Detta ingår i min online coachning
               </Typography>
               <Typography variant="body1" color="text.secondary">
                 En undertitel designad för att introducera till punktlistan
@@ -83,19 +82,28 @@ function ProgramDescriptions() {
 
             <CardContent>
               <Typography variant="h6">
-                <CheckIcon sx={{ mr: 1 }} /> Detta ingår i ditt program
+                <CheckIcon sx={{ mr: 1 }} /> Skräddarsytt träningsschema
+                utformat efter dig, dina mål & dina förutsättningar.
               </Typography>
               <Typography variant="h6">
-                <CheckIcon sx={{ mr: 1 }} /> Detta ingår också i ditt program
+                <CheckIcon sx={{ mr: 1 }} /> Kostschema/kostrådgivning, hur man
+                skall tänka för att hitta en hälsosam balans mellan mat &
+                träning.
               </Typography>
               <Typography variant="h6">
-                <CheckIcon sx={{ mr: 1 }} /> Detta ingår också i ditt program
+                <CheckIcon sx={{ mr: 1 }} /> Tips på enkla & nyttiga recept
               </Typography>
               <Typography variant="h6">
-                <CheckIcon sx={{ mr: 1 }} /> Detta ingår också i ditt program
+                <CheckIcon sx={{ mr: 1 }} /> Möjlighet till daglig kontakt med
+                mig för coaching & frågor.
               </Typography>
               <Typography variant="h6">
-                <CheckIcon sx={{ mr: 1 }} /> Detta ingår också i ditt program
+                <CheckIcon sx={{ mr: 1 }} /> Veckovis uppföljning där vi
+                diskuterar föregående vecka & eventuella önskemål.
+              </Typography>
+              <Typography variant="h6">
+                <CheckIcon sx={{ mr: 1 }} /> Tips & rådgivning för att jobba
+                bort dåliga vanor & hitta en balans i vardagen.
               </Typography>
             </CardContent>
             <CardContent>

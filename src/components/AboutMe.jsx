@@ -18,7 +18,7 @@ const handleContactMeClick = () => {
 };
 
 function AboutMe() {
-  const image = process.env.PUBLIC_URL + "/profilePicture.png";
+  const image = process.env.PUBLIC_URL + "/hanna.jpg";
   return (
     <Grid container columns={2}>
       <Grid
@@ -53,21 +53,34 @@ function AboutMe() {
         >
           <CardContent>
             <Typography
-              variant="h2"
+              variant="h3"
               color="white.main"
-              sx={{ fontWeight: "bold", letterSpacing: "2px" }}
+              sx={{
+                fontWeight: "bold",
+                fontSize: { md: "6vw" },
+                letterSpacing: "2px",
+              }}
             >
-              Dags Att Förändra Ditt Liv
+              Din Hälsa
             </Typography>
+            <Typography
+              variant="h3"
+              color="white.main"
+              sx={{
+                fontWeight: "bold",
+                fontSize: { md: "6vw" },
+                letterSpacing: "2px",
+              }}
+            >
+              Ditt Ansvar.
+            </Typography>
+
             <Typography variant="body1" mt={2}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-              aut eum fugit magnam reprehenderit, suscipit explicabo mollitia
-              consequatur repellendus beatae maxime eligendi cum accusantium
-              tempore nostrum numquam! Minima, tempore quis.re
+              Bygg din drömkropp utifrån dina förutsättningar med min hjälp.
             </Typography>
           </CardContent>
 
-          <CardActions sx={{ my: 2, justifyContent: "center" }}>
+          <CardActions sx={{ justifyContent: "center" }}>
             <Button
               onClick={handleContactMeClick}
               size="large"

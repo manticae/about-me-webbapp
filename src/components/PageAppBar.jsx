@@ -55,7 +55,7 @@ function PageAppBar() {
             aria-controls="menu-appbar"
             aria-haspopup="true"
             onClick={handleOpenNavMenu}
-            color="inherit"
+            color="white"
             sx={{ padding: "0" }}
           >
             <MenuIcon />
@@ -94,12 +94,13 @@ function PageAppBar() {
 
         <Typography
           align="center"
-          variant="h5"
+          color="white.main"
           sx={{
-            width: "170px",
+            fontSize: { xs: "small", md: "large" },
+            paddingLeft: "55px",
+            textAlign: "center",
             lineHeight: "1",
-            letterSpacing: { xs: "2px", md: "5px" },
-            fontWeight: "bold",
+            letterSpacing: "4px",
           }}
         >
           HANNA LJUNGSTEN
