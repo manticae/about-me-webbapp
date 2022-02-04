@@ -4,21 +4,21 @@ import {
   CardActions,
   CardContent,
   Grid,
-  Typography,
-} from "@mui/material";
-import * as React from "react";
-import { scroller } from "react-scroll";
+  Typography
+} from '@mui/material'
+import * as React from 'react'
+import { scroller } from 'react-scroll'
 
 const handleContactMeClick = () => {
-  scroller.scrollTo("contact-me-section", {
+  scroller.scrollTo('contact-me-section', {
     duration: 800,
     delay: 0,
-    smooth: "easeInOutQuart",
-  });
-};
+    smooth: 'easeInOutQuart'
+  })
+}
 
 function AboutMe() {
-  const image = process.env.PUBLIC_URL + "/profilePicture.png";
+  const image = process.env.PUBLIC_URL + '/profilePicture.jpg'
   return (
     <Grid container columns={2}>
       <Grid
@@ -26,36 +26,36 @@ function AboutMe() {
         xs={2}
         md={1}
         style={{
-          backgroundRepeat: "no-repeat",
+          backgroundRepeat: 'no-repeat',
           backgroundImage: `
           url(${image})`,
-          height: "100vh",
+          height: '100vh',
 
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
         }}
       ></Grid>
       <Grid item xs={2} md={1}>
         <Card
-          elevation="0"
+          elevation={0}
           square
           sx={{
-            px: "5vw",
-            height: { xs: "auto", md: "100vh" },
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignSelf: "center",
-            background: "rgb(222,167,144)",
+            px: '5vw',
+            height: { xs: 'auto', md: '100vh' },
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignSelf: 'center',
+            background: 'rgb(222,167,144)',
             background:
-              "linear-gradient(0deg, rgba(222,167,144,1) 0%, rgba(234,198,183,1) 100%)",
+              'linear-gradient(0deg, rgba(222,167,144,1) 0%, rgba(234,198,183,1) 100%)'
           }}
         >
           <CardContent>
             <Typography
               variant="h2"
               color="white.main"
-              sx={{ fontWeight: "bold", letterSpacing: "2px" }}
+              sx={{ fontWeight: 'bold', letterSpacing: '2px' }}
             >
               Dags Att Förändra Ditt Liv
             </Typography>
@@ -67,14 +67,14 @@ function AboutMe() {
             </Typography>
           </CardContent>
 
-          <CardActions sx={{ my: 2, justifyContent: "center" }}>
+          <CardActions sx={{ my: 2, justifyContent: 'center' }}>
             <Button
               onClick={handleContactMeClick}
               size="large"
               variant="contained"
               fullWidth
               sx={{
-                py: "15px",
+                py: '15px'
               }}
             >
               Intresseanmälan
@@ -83,7 +83,7 @@ function AboutMe() {
         </Card>
       </Grid>
     </Grid>
-  );
+  )
 }
 
-export default AboutMe;
+export default AboutMe
