@@ -6,8 +6,9 @@ import {
   Grid,
   Typography
 } from '@mui/material'
-import * as React from 'react'
+import React, { useEffect } from 'react'
 import { scroller } from 'react-scroll'
+import Aos from 'aos'
 
 const handleContactMeClick = () => {
   scroller.scrollTo('contact-me-section', {
@@ -18,6 +19,9 @@ const handleContactMeClick = () => {
 }
 
 function AboutMe() {
+  useEffect(() => {
+    // Aos.init({ duration: 1000 })
+  }, [])
   const image = process.env.PUBLIC_URL + '/hanna.jpg'
   return (
     <Grid container columns={2}>
@@ -61,6 +65,7 @@ function AboutMe() {
             >
               Din Hälsa
             </Typography>
+
             <Typography
               variant="h3"
               color="white.main"
