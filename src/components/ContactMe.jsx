@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 import {
   TextField,
   Typography,
@@ -11,26 +11,21 @@ import {
   RadioGroup,
   FormControl,
   FormLabel,
-  FormControlLabel,
-} from "@mui/material";
-import Spacer from "./Spacer";
+  FormControlLabel
+} from '@mui/material'
 
 function ContactMe() {
-  const image = process.env.PUBLIC_URL + "/backgroundPicture2.png";
+  const image = process.env.PUBLIC_URL + '/backgroundPicture2.png'
   return (
     <Box name="contact-me-section">
       <Box
-        sx={{ display: { xs: "none", md: "flex" } }}
+        sx={{ display: { xs: 'none', md: 'flex' } }}
         style={{
           flexGrow: 1,
-          minHeight: "650px",
-          backgroundColor: "#c3ccce",
-          backgroundImage: `url(${image})`,
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          alignItems: "center",
+          minHeight: '650px',
+          background:
+            'linear-gradient(0deg, rgba(222,167,144,1) 0%, rgba(234,198,183,1) 100%)',
+          alignItems: 'center'
         }}
       >
         <Grid container columns={12} alignItems="center">
@@ -42,12 +37,12 @@ function ContactMe() {
         </Grid>
       </Box>
       <Box
-        sx={{ display: { xs: "flex", md: "none" } }}
+        sx={{ display: { xs: 'flex', md: 'none' } }}
         style={{
           flexGrow: 1,
-          minHeight: "650px",
+          minHeight: '650px',
 
-          alignItems: "center",
+          alignItems: 'center'
         }}
       >
         <Grid container columns={12} alignItems="center">
@@ -58,46 +53,46 @@ function ContactMe() {
         </Grid>
       </Box>
     </Box>
-  );
+  )
 }
 
 function ContactMeCard() {
-  const [name, setName] = React.useState("");
-  const [phoneNumber, setphoneNumber] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [message, setMessage] = React.useState("");
+  const [name, setName] = React.useState('')
+  const [phoneNumber, setphoneNumber] = React.useState('')
+  const [email, setEmail] = React.useState('')
+  const [message, setMessage] = React.useState('')
 
   const handleNameChange = (event) => {
-    setName(event.target.value);
-  };
+    setName(event.target.value)
+  }
 
   const handlePhoneNumberChange = (event) => {
-    setphoneNumber(event.target.value);
-  };
+    setphoneNumber(event.target.value)
+  }
 
   const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
+    setEmail(event.target.value)
+  }
 
   const handleMessageChange = (event) => {
-    setMessage(event.target.value);
-  };
+    setMessage(event.target.value)
+  }
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Submit");
-    console.log(name);
-    console.log(phoneNumber);
-    console.log(email);
-    console.log(message);
-  };
+    event.preventDefault()
+    console.log('Submit')
+    console.log(name)
+    console.log(phoneNumber)
+    console.log(email)
+    console.log(message)
+  }
   return (
     <Card elevation={0}>
       <CardContent>
         <Typography
           align="center"
           variant="h4"
-          sx={{ display: "block", pb: 2 }}
+          sx={{ display: 'block', pb: 2 }}
         >
           Intresseanmälan
         </Typography>
@@ -202,7 +197,7 @@ function ContactMeCard() {
               xs={12}
               md={12}
               style={{
-                alignSelf: "center",
+                alignSelf: 'center'
               }}
             >
               <Button type="submit" size="large" variant="contained">
@@ -213,7 +208,7 @@ function ContactMeCard() {
         </form>
       </CardContent>
     </Card>
-  );
+  )
 }
 
-export default ContactMe;
+export default ContactMe
