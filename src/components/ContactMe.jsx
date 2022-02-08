@@ -15,7 +15,6 @@ import {
 } from '@mui/material'
 
 function ContactMe() {
-  const image = process.env.PUBLIC_URL + '/backgroundPicture2.png'
   return (
     <Box name="contact-me-section">
       <Box

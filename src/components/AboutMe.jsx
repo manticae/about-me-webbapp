@@ -61,6 +61,7 @@ function AboutMe() {
             >
               Din Hälsa
             </Typography>
+
             <Typography
               variant="h3"
               color="white.main"
