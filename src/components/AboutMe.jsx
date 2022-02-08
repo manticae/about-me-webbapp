@@ -4,91 +4,121 @@ import {
   CardActions,
   CardContent,
   Grid,
-  Typography
-} from '@mui/material'
-import * as React from 'react'
-import { scroller } from 'react-scroll'
+  Typography,
+} from "@mui/material";
+import { React, useEffect } from "react";
+import { scroller } from "react-scroll";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const handleContactMeClick = () => {
-  scroller.scrollTo('contact-me-section', {
+  scroller.scrollTo("contact-me-section", {
     duration: 800,
     delay: 0,
-    smooth: 'easeInOutQuart'
-  })
-}
+    smooth: "easeInOutQuart",
+  });
+};
 
 function AboutMe() {
-  const image = process.env.PUBLIC_URL + '/hanna.jpg'
+  const image = process.env.PUBLIC_URL + "/hanna.jpg";
+  useEffect(() => {
+    Aos.init({});
+  }, []);
   return (
     <Grid container columns={2}>
       <Grid
         item
         xs={2}
         md={1}
-        style={{
-          backgroundRepeat: 'no-repeat',
+        sx={{
+          backgroundRepeat: "no-repeat",
           backgroundImage: `
           url(${image})`,
-          height: '100vh',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          height: "100vh",
+          backgroundSize: { xs: "cover", md: "cover" },
+          backgroundPosition: { xs: "center", md: "center" },
+          backgroundAttachment: { xs: "fixed", md: "initial" },
         }}
+        // {{
+        //     backgroundRepeat: "no-repeat",
+        //     backgroundImage: `
+        //     url(${image})`,
+        //     backgroundSize: "50vw auto",
+        //     backgroundPosition: "left",
+        //     backgroundAttachment: "fixed",
+        //   }}
       ></Grid>
       <Grid item xs={2} md={1}>
         <Card
           elevation={0}
           square
           sx={{
-            px: '5vw',
-            height: { xs: 'auto', md: '100vh' },
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignSelf: 'center',
+            px: "5vw",
+            height: { xs: "auto", md: "100vh" },
+            display: "flex",
+            paddingY: { xs: "10px", md: "0px" },
+            flexDirection: "column",
+            justifyContent: "center",
+            alignSelf: "center",
             background:
-              'linear-gradient(0deg, rgba(222,167,144,1) 0%, rgba(234,198,183,1) 100%)'
+              "linear-gradient(0deg, rgba(222,167,144,1) 0%, rgba(234,198,183,1) 100%)",
           }}
         >
           <CardContent>
             <Typography
+              data-aos="fade-right"
+              data-aos-delay="200"
+              data-aos-duration="1000"
               variant="h3"
               color="white.main"
               sx={{
-                fontWeight: 'bold',
-                fontSize: { md: '6vw' },
-                letterSpacing: '2px'
+                fontWeight: "bold",
+                fontSize: { md: "6vw" },
+                letterSpacing: "2px",
               }}
             >
-              Din Hälsa
+              Din Hälsa,
             </Typography>
 
             <Typography
+              data-aos="fade-left"
+              data-aos-delay="1200"
+              data-aos-duration="1000"
               variant="h3"
               color="white.main"
               sx={{
-                fontWeight: 'bold',
-                fontSize: { md: '6vw' },
-                letterSpacing: '2px'
+                fontWeight: "bold",
+                fontSize: { md: "6vw" },
+                letterSpacing: "2px",
               }}
             >
               Ditt Ansvar.
             </Typography>
 
-            <Typography variant="body1" mt={2}>
+            <Typography
+              data-aos="fade-in"
+              data-aos-delay="2200"
+              data-aos-duration="1000"
+              variant="body1"
+              mt={2}
+            >
               Bygg din drömkropp med min hjälp, har du viljan så har jag
               verktygen för att du ska uppnå dina mål på de mest hälsosamma
-              viset
+              viset.
             </Typography>
           </CardContent>
 
-          <CardActions sx={{ justifyContent: 'center' }}>
+          <CardActions sx={{ justifyContent: "center", paddingY: "16px" }}>
             <Button
+              data-aos="zoom-in"
+              data-aos-delay="3000"
+              data-aos-duration="1000"
               onClick={handleContactMeClick}
               size="large"
               variant="contained"
               fullWidth
               sx={{
-                py: '15px'
+                py: { xs: "15px" },
               }}
             >
               Intresseanmälan
@@ -97,7 +127,7 @@ function AboutMe() {
         </Card>
       </Grid>
     </Grid>
-  )
+  );
 }
 
-export default AboutMe
+export default AboutMe;

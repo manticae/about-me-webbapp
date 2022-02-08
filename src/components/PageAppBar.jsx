@@ -1,4 +1,4 @@
-import MenuIcon from '@mui/icons-material/Menu'
+import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar,
   Box,
@@ -8,47 +8,47 @@ import {
   MenuItem,
   Toolbar,
   Typography,
-  Stack
-} from '@mui/material'
-import * as React from 'react'
-import { scroller } from 'react-scroll'
+  Stack,
+} from "@mui/material";
+import * as React from "react";
+import { scroller } from "react-scroll";
 
 function PageAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null)
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget)
-  }
+    setAnchorElNav(event.currentTarget);
+  };
 
   const handleCloseNavMenu = () => {
-    setAnchorElNav(null)
-  }
+    setAnchorElNav(null);
+  };
 
   const handleHowItWorksClick = () => {
-    handleCloseNavMenu()
-    scroller.scrollTo('the-process-section', {
+    handleCloseNavMenu();
+    scroller.scrollTo("the-process-section", {
       duration: 800,
       delay: 0,
-      smooth: 'easeInOutQuart'
-    })
-  }
+      smooth: "easeInOutQuart",
+    });
+  };
 
   const handleContactMeClick = () => {
-    handleCloseNavMenu()
-    scroller.scrollTo('contact-me-section', {
+    handleCloseNavMenu();
+    scroller.scrollTo("contact-me-section", {
       duration: 800,
       delay: 0,
-      smooth: 'easeInOutQuart'
-    })
-  }
+      smooth: "easeInOutQuart",
+    });
+  };
   return (
     <AppBar position="absolute" color="transparent" elevation={0}>
       <Toolbar>
         <Box
           sx={{
-            display: { xs: 'flex', md: 'none' },
+            display: { xs: "flex", md: "none" },
             flexGrow: 1,
-            flexBasis: 0
+            flexBasis: 0,
           }}
         >
           <IconButton
@@ -57,7 +57,7 @@ function PageAppBar() {
             aria-haspopup="true"
             onClick={handleOpenNavMenu}
             color="white"
-            sx={{ padding: '0' }}
+            sx={{ padding: "0" }}
           >
             <MenuIcon />
           </IconButton>
@@ -65,13 +65,13 @@ function PageAppBar() {
             id="menu-appbar"
             anchorEl={anchorElNav}
             anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right'
+              vertical: "top",
+              horizontal: "right",
             }}
             keepMounted
             transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right'
+              vertical: "top",
+              horizontal: "right",
             }}
             open={Boolean(anchorElNav)}
             onClose={handleCloseNavMenu}
@@ -81,9 +81,9 @@ function PageAppBar() {
         </Box>
         <Box
           sx={{
-            display: { xs: 'none', md: 'flex' },
+            display: { xs: "none", md: "flex" },
             flexGrow: 1,
-            flexBasis: 0
+            flexBasis: 0,
           }}
         >
           <Button variant="outlined" onClick={handleContactMeClick}>
@@ -91,18 +91,17 @@ function PageAppBar() {
           </Button>
         </Box>
 
-        <Stack>
+        <Stack justifyContent="flex-start">
           <Typography
             align="center"
             color="white.main"
-            variant="h5"
             sx={{
-              // fontSize: { xs: 'small', md: 'large' },
-              // paddingLeft: '55px',
-              paddingLeft: '10px',
-              textAlign: 'center',
-              lineHeight: '1',
-              letterSpacing: '4px'
+              fontSize: { xs: "small", md: "large" },
+              paddingLeft: { md: "55px" },
+              paddingBottom: "5px",
+              textAlign: "center",
+              lineHeight: "1",
+              letterSpacing: "4px",
             }}
           >
             HANNA LJUNGSTEN
@@ -110,24 +109,22 @@ function PageAppBar() {
           <Typography
             align="center"
             color="white.main"
-            variant="h6"
             sx={{
-              // fontSize: { xs: 'small', md: 'large' },
-              // paddingLeft: '55px',
-              paddingLeft: '10px',
-              textAlign: 'center',
-              lineHeight: '1',
-              letterSpacing: '4px'
+              fontSize: { xs: "small", md: "medium" },
+              paddingLeft: { md: "47px" },
+              textAlign: "center",
+              lineHeight: "1",
+              letterSpacing: "1px",
             }}
           >
-            PT & Online Coach
+            Personlig tränare & online coach
           </Typography>
         </Stack>
 
         <Box sx={{ flexGrow: 1, flexBasis: 0 }}></Box>
       </Toolbar>
     </AppBar>
-  )
+  );
 }
 
-export default PageAppBar
+export default PageAppBar;
