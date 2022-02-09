@@ -5,11 +5,14 @@ import {
   CardContent,
   Grid,
   Typography,
+  Box,
 } from "@mui/material";
 import { React, useEffect } from "react";
 import { scroller } from "react-scroll";
 import Aos from "aos";
 import "aos/dist/aos.css";
+
+import Div100vh from "react-div-100vh";
 
 const handleContactMeClick = () => {
   scroller.scrollTo("contact-me-section", {
@@ -26,7 +29,7 @@ function AboutMe() {
   }, []);
   return (
     <Grid container columns={2}>
-      <Grid
+      {/* <Grid
         item
         xs={2}
         md={1}
@@ -47,7 +50,22 @@ function AboutMe() {
         //     backgroundPosition: "left",
         //     backgroundAttachment: "fixed",
         //   }}
-      ></Grid>
+      ></Grid> */}
+      <Grid item xs={2} md={1}>
+        <Div100vh>
+          <Box
+            sx={{
+              height: "inherit",
+              backgroundRepeat: "no-repeat",
+              backgroundImage: `
+          url(${image})`,
+              backgroundSize: { xs: "cover", md: "cover" },
+              backgroundPosition: { xs: "center", md: "center" },
+              backgroundAttachment: { xs: "fixed", md: "initial" },
+            }}
+          ></Box>
+        </Div100vh>
+      </Grid>
       <Grid item xs={2} md={1}>
         <Card
           elevation={0}
