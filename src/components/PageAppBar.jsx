@@ -117,7 +117,7 @@ function PageAppBar() {
               letterSpacing: "1px",
             }}
           >
-            Personlig tränare & online coach
+            Lic. Personlig tränare & online coach
           </Typography>
         </Stack>
 
