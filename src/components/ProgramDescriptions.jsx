@@ -26,7 +26,7 @@ const handleContactMeClick = () => {
 
 function ProgramDescriptions() {
   useEffect(() => {
-    Aos.init({ duration: 1200 });
+    Aos.init({ duration: 1200, delay: 1000 });
   }, []);
   const items = [
     {
@@ -76,7 +76,7 @@ function ProgramDescriptions() {
               width: "100%",
             }}
           >
-            <CardContent data-aos="fade-up">
+            <CardContent data-aos="fade-in">
               <Typography variant="h4">
                 Detta ingår i min online coachning
               </Typography>
@@ -87,8 +87,8 @@ function ProgramDescriptions() {
 
             <CardContent>
               <Typography variant="body1" data-aos="fade-right">
-                <CheckIcon fontSize="inherit" sx={{ mr: 1 }} /> Skräddarsydda
-                träningsscheman.
+                <CheckIcon fontSize="inherit" sx={{ mr: 1 }} /> Skräddarsytt
+                träningsschema.
               </Typography>
               <Typography variant="body1" data-aos="fade-right">
                 <CheckIcon fontSize="inherit" sx={{ mr: 1 }} /> Kostschema och
@@ -106,9 +106,17 @@ function ProgramDescriptions() {
                 <CheckIcon fontSize="inherit" sx={{ mr: 1 }} /> Veckovis
                 uppföljning.
               </Typography>
-              <Typography variant="body1" data-aos="fade-right">
+              {/* <Typography variant="body1" data-aos="fade-right">
                 <CheckIcon fontSize="inherit" sx={{ mr: 1 }} /> Tips &
                 rådgivning kring vanor.
+              </Typography> */}
+              <Typography variant="body1" data-aos="fade-right">
+                <CheckIcon fontSize="inherit" sx={{ mr: 1 }} /> Tips för att
+                motarbeta dåliga vanor.
+              </Typography>
+              <Typography variant="body1" data-aos="fade-right">
+                <CheckIcon fontSize="inherit" sx={{ mr: 1 }} /> Veckovisa
+                utmaningar.
               </Typography>
             </CardContent>
             <CardContent>

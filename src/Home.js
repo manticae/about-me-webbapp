@@ -15,7 +15,7 @@ import Transformations from "./components/Transformations";
 
 const theme = createTheme({
   typography: {
-    fontFamily: ["Merriweather Sans", "sans-serif"].join(","),
+    fontFamily: ["Ledger", "serif"].join(","),
   },
   palette: {
     primary: {
@@ -53,7 +53,7 @@ function Home() {
         <ContactMe />
         {/* <Spacer /> */}
         {/* <Transformations /> */}
-        <Spacer />
+        {/* <Spacer /> */}
         <MyStory />
         <Spacer />
         <SocialMedia />
