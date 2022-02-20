@@ -5,63 +5,40 @@ import {
   CardContent,
   Grid,
   Typography,
-  Box,
-} from "@mui/material";
-import { React, useEffect } from "react";
-import { scroller } from "react-scroll";
-import Aos from "aos";
-import "aos/dist/aos.css";
+  Box
+} from '@mui/material'
+import { React, useEffect } from 'react'
+import { scroller } from 'react-scroll'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
-import Div100vh from "react-div-100vh";
+import Div100vh from 'react-div-100vh'
 
 const handleContactMeClick = () => {
-  scroller.scrollTo("contact-me-section", {
+  scroller.scrollTo('contact-me-section', {
     duration: 800,
     delay: 0,
-    smooth: "easeInOutQuart",
-  });
-};
+    smooth: 'easeInOutQuart'
+  })
+}
 
 function AboutMe() {
-  const image = process.env.PUBLIC_URL + "/hanna.jpg";
+  const image = process.env.PUBLIC_URL + '/hanna.jpg'
   useEffect(() => {
-    Aos.init({});
-  }, []);
+    Aos.init({})
+  }, [])
   return (
     <Grid container columns={2}>
-      {/* <Grid
-        item
-        xs={2}
-        md={1}
-        sx={{
-          backgroundRepeat: "no-repeat",
-          backgroundImage: `
-          url(${image})`,
-          height: "100vh",
-          backgroundSize: { xs: "cover", md: "cover" },
-          backgroundPosition: { xs: "center", md: "center" },
-          backgroundAttachment: { xs: "fixed", md: "initial" },
-        }}
-        // {{
-        //     backgroundRepeat: "no-repeat",
-        //     backgroundImage: `
-        //     url(${image})`,
-        //     backgroundSize: "50vw auto",
-        //     backgroundPosition: "left",
-        //     backgroundAttachment: "fixed",
-        //   }}
-      ></Grid> */}
       <Grid item xs={2} md={1}>
         <Div100vh>
           <Box
             sx={{
-              height: "inherit",
-              backgroundRepeat: "no-repeat",
+              height: 'inherit',
+              backgroundRepeat: 'no-repeat',
               backgroundImage: `
           url(${image})`,
-              backgroundSize: { xs: "cover", md: "cover" },
-              backgroundPosition: { xs: "center", md: "center" },
-              backgroundAttachment: { xs: "fixed", md: "initial" },
+              backgroundSize: { xs: 'cover', md: 'cover' },
+              backgroundPosition: { xs: 'center', md: 'center' }
             }}
           ></Box>
         </Div100vh>
@@ -71,15 +48,15 @@ function AboutMe() {
           elevation={0}
           square
           sx={{
-            px: "5vw",
-            height: { xs: "auto", md: "100vh" },
-            display: "flex",
-            paddingY: { xs: "10px", md: "0px" },
-            flexDirection: "column",
-            justifyContent: "center",
-            alignSelf: "center",
+            px: '5vw',
+            height: { xs: 'auto', md: '100vh' },
+            display: 'flex',
+            paddingY: { xs: '10px', md: '0px' },
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignSelf: 'center',
             background:
-              "linear-gradient(0deg, rgba(222,167,144,1) 0%, rgba(234,198,183,1) 100%)",
+              'linear-gradient(0deg, rgba(222,167,144,1) 0%, rgba(234,198,183,1) 100%)'
           }}
         >
           <CardContent>
@@ -90,9 +67,9 @@ function AboutMe() {
               variant="h3"
               color="white.main"
               sx={{
-                fontWeight: "bold",
-                fontSize: { md: "6vw" },
-                letterSpacing: "2px",
+                fontWeight: 'bold',
+                fontSize: { md: '6vw' },
+                letterSpacing: '2px'
               }}
             >
               Din Hälsa,
@@ -105,9 +82,9 @@ function AboutMe() {
               variant="h3"
               color="white.main"
               sx={{
-                fontWeight: "bold",
-                fontSize: { md: "6vw" },
-                letterSpacing: "2px",
+                fontWeight: 'bold',
+                fontSize: { md: '6vw' },
+                letterSpacing: '2px'
               }}
             >
               Ditt Ansvar.
@@ -126,7 +103,7 @@ function AboutMe() {
             </Typography>
           </CardContent>
 
-          <CardActions sx={{ justifyContent: "center", paddingY: "16px" }}>
+          <CardActions sx={{ justifyContent: 'center', paddingY: '16px' }}>
             <Button
               data-aos="zoom-in"
               data-aos-delay="3000"
@@ -136,7 +113,7 @@ function AboutMe() {
               variant="contained"
               fullWidth
               sx={{
-                py: { xs: "15px" },
+                py: { xs: '15px' }
               }}
             >
               Intresseanmälan
@@ -145,7 +122,7 @@ function AboutMe() {
         </Card>
       </Grid>
     </Grid>
-  );
+  )
 }
 
-export default AboutMe;
+export default AboutMe
