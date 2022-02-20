@@ -1,18 +1,18 @@
-import React, { useEffect } from "react";
-import { Box, Grid, Card, CardContent, Typography } from "@mui/material";
-import Aos from "aos";
-import "aos/dist/aos.css";
+import React, { useEffect } from 'react'
+import { Box, Grid, Card, CardContent, Typography } from '@mui/material'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 function MyStory() {
   useEffect(() => {
-    Aos.init({ duration: 1200, delay: 500 });
-  }, []);
-  const video = process.env.PUBLIC_URL + "/workoutVideo1.mp4";
+    Aos.init({ duration: 1200 })
+  }, [])
+  const video = process.env.PUBLIC_URL + '/workoutVideo1.mp4'
 
   return (
     <Box
       style={{
-        flexGrow: 1,
+        flexGrow: 1
       }}
     >
       <Grid container columns={16}>
@@ -21,9 +21,9 @@ function MyStory() {
           xs={16}
           md={8}
           style={{
-            alignSelf: "center",
-            backgroundColor: "#c3ccce",
-            height: "700px",
+            alignSelf: 'center',
+            backgroundColor: '#c3ccce',
+            height: '700px'
           }}
         >
           <video
@@ -33,9 +33,9 @@ function MyStory() {
             playsInline
             src={video}
             style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover'
             }}
           ></video>
         </Grid>
@@ -44,19 +44,19 @@ function MyStory() {
           xs={16}
           md={8}
           style={{
-            alignSelf: "center",
-            height: "700px",
-            backgroundColor: "#c3ccce",
+            alignSelf: 'center',
+            height: '700px',
+            backgroundColor: '#c3ccce'
           }}
         >
           <Card
             elevation={0}
             square
             style={{
-              display: "flex",
-              flexDirection: "column",
-              height: "100%",
-              width: "100%",
+              display: 'flex',
+              flexDirection: 'column',
+              height: '100%',
+              width: '100%'
             }}
           >
             <CardContent>
@@ -67,6 +67,7 @@ function MyStory() {
                 variant="body1"
                 sx={{ mt: 2, mx: 3 }}
                 data-aos="fade-in"
+                data-aos-duration="1000"
               >
                 Träning har alltid varit en stor del av mitt liv. I 11 år var
                 gymnastiken allt, men ju äldre jag blev desto större blev
@@ -79,6 +80,7 @@ function MyStory() {
                 variant="body1"
                 sx={{ mt: 2, mx: 3 }}
                 data-aos="fade-in"
+                data-aos-duration="2000"
               >
                 Efter gymnasiet började jag fundera på vad jag ville göra med
                 mitt liv. Vad tycker jag är kul? Vad brinner jag för och vad är
@@ -97,6 +99,7 @@ function MyStory() {
                 variant="body1"
                 sx={{ mt: 2, mx: 3 }}
                 data-aos="fade-in"
+                data-aos-duration="3000"
               >
                 Din kropp och hälsa är det viktigaste du har och för att kunna
                 leva ett långt och friskt liv behöver vi ta vårt ansvar idag. Vi
@@ -107,32 +110,20 @@ function MyStory() {
                 Investera i dig själv idag, jag finns vid din sida hela vägen.
               </Typography>
 
-              {/* <Typography variant="body1" sx={{ mt: 2, mx: 3 }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-                aut eum fugit magnam reprehenderit, suscipit explicabo mollitia
-                consequatur repellendus beatae maxime eligendi cum accusantium
-                tempore nostrum numquam! Minima, tempore quis.re Lorem ipsum
-                dolor sit amet consectetur adipisicing elit. Cumque aut eum
-                fugit magnam reprehenderit, suscipit explicabo mollitia
-                consequatur repellendus beatae maxime eligendi cum accusantium
-                tempore nostrum numquam! Minima, tempore quis.re
+              <Typography
+                variant="h5"
+                data-aos="fade-in"
+                data-aos-duration="4000"
+                sx={{ mt: 2, mx: 3, display: 'flex', justifyContent: 'center' }}
+              >
+                - Hanna
               </Typography>
-              <Typography variant="body1" sx={{ mt: 2, mx: 3 }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-                aut eum fugit magnam reprehenderit, suscipit explicabo mollitia
-                consequatur repellendus beatae maxime eligendi cum accusantium
-                tempore nostrum numquam! Minima, tempore quis.re Lorem ipsum
-                dolor sit amet consectetur adipisicing elit. Cumque aut eum
-                fugit magnam reprehenderit, suscipit explicabo mollitia
-                consequatur repellendus beatae maxime eligendi cum accusantium
-                tempore nostrum numquam! Minima, tempore quis.re
-              </Typography> */}
             </CardContent>
           </Card>
         </Grid>
       </Grid>
     </Box>
-  );
+  )
 }
 
-export default MyStory;
+export default MyStory
