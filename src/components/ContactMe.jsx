@@ -1,30 +1,35 @@
-import * as React from 'react'
+import * as React from "react";
 import {
   TextField,
   Typography,
   Button,
   Grid,
+  MenuItem,
   Box,
   Card,
   CardContent,
+  Checkbox,
   Radio,
   RadioGroup,
   FormControl,
   FormLabel,
-  FormControlLabel
-} from '@mui/material'
+  FormControlLabel,
+} from "@mui/material";
 
+const genders = [
+  "Man", "Kvinna", "Annat"
+]
 function ContactMe() {
   return (
     <Box name="contact-me-section">
       <Box
-        sx={{ display: { xs: 'none', md: 'flex' } }}
+        sx={{ display: { xs: "none", md: "flex" } }}
         style={{
           flexGrow: 1,
-          minHeight: '650px',
+          minHeight: "650px",
           background:
-            'linear-gradient(0deg, rgba(222,167,144,1) 0%, rgba(234,198,183,1) 100%)',
-          alignItems: 'center'
+            "linear-gradient(0deg, rgba(222,167,144,1) 0%, rgba(234,198,183,1) 100%)",
+          alignItems: "center",
         }}
       >
         <Grid container columns={12} alignItems="center">
@@ -36,12 +41,12 @@ function ContactMe() {
         </Grid>
       </Box>
       <Box
-        sx={{ display: { xs: 'flex', md: 'none' } }}
+        sx={{ display: { xs: "flex", md: "none" } }}
         style={{
           flexGrow: 1,
-          minHeight: '650px',
+          minHeight: "650px",
 
-          alignItems: 'center'
+          alignItems: "center",
         }}
       >
         <Grid container columns={12} alignItems="center">
@@ -52,46 +57,56 @@ function ContactMe() {
         </Grid>
       </Box>
     </Box>
-  )
+  );
 }
 
 function ContactMeCard() {
-  const [name, setName] = React.useState('')
-  const [phoneNumber, setphoneNumber] = React.useState('')
-  const [email, setEmail] = React.useState('')
-  const [message, setMessage] = React.useState('')
+  const [name, setName] = React.useState("");
+  const [lastName, setLastName] = React.useState("");
+  const [age, setAge] = React.useState("");
+  const [phoneNumber, setphoneNumber] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [message, setMessage] = React.useState("");
 
   const handleNameChange = (event) => {
-    setName(event.target.value)
-  }
+    setName(event.target.value);
+  };
+
+  const handleLastNameChange = (event) => {
+    setLastName(event.target.value);
+  };
+
+  const handleAgeChange = (event) => {
+    setAge(event.target.value);
+  };
 
   const handlePhoneNumberChange = (event) => {
-    setphoneNumber(event.target.value)
-  }
+    setphoneNumber(event.target.value);
+  };
 
   const handleEmailChange = (event) => {
-    setEmail(event.target.value)
-  }
+    setEmail(event.target.value);
+  };
 
   const handleMessageChange = (event) => {
-    setMessage(event.target.value)
-  }
+    setMessage(event.target.value);
+  };
 
   const handleSubmit = (event) => {
-    event.preventDefault()
-    console.log('Submit')
-    console.log(name)
-    console.log(phoneNumber)
-    console.log(email)
-    console.log(message)
-  }
+    event.preventDefault();
+    console.log("Submit");
+    console.log(name);
+    console.log(phoneNumber);
+    console.log(email);
+    console.log(message);
+  };
   return (
     <Card elevation={0}>
       <CardContent>
         <Typography
           align="center"
           variant="h4"
-          sx={{ display: 'block', pb: 2 }}
+          sx={{ display: "block", pb: 2 }}
         >
           Intresseanmälan
         </Typography>
@@ -110,11 +125,39 @@ function ContactMeCard() {
               <TextField
                 fullWidth
                 label="Efternamn"
-                value={name}
-                onChange={handleNameChange}
+                value={lastName}
+                onChange={handleLastNameChange}
                 color="text"
                 margin="dense"
               />
+              <TextField
+                fullWidth
+                label="Ålder"
+                type="number"
+                error={age < 16 || age > 99}
+                value={age}
+                onChange={handleAgeChange}
+                color="text"
+                    margin="dense"
+              />
+                            <TextField
+                fullWidth
+                label="Kön"
+                select
+                onChange={handleAgeChange}
+                color="text"
+                margin="dense"
+              >
+                        {genders.map((gender) => (
+            <MenuItem key={gender} value={gender}>
+              {gender}
+            </MenuItem>
+          ))}
+
+              </TextField>
+
+
+
               <TextField
                 fullWidth
                 label="Telefonnummer"
@@ -135,7 +178,7 @@ function ContactMeCard() {
 
             <Grid item xs={12} md={4}>
               <FormControl>
-                <FormLabel>Hur många gånger kan du träna i veckan?</FormLabel>
+                <FormLabel>Hur många gånger i veckan vill du träna?</FormLabel>
                 <RadioGroup aria-label="gender" name="antalGånger">
                   <FormControlLabel
                     value="1"
@@ -150,7 +193,7 @@ function ContactMeCard() {
                   <FormControlLabel
                     value="3"
                     control={<Radio />}
-                    label="4-6 gånger"
+                    label="4-7 gånger"
                   />
                 </RadioGroup>
               </FormControl>
@@ -158,22 +201,32 @@ function ContactMeCard() {
 
             <Grid item xs={12} md={4}>
               <FormControl>
-                <FormLabel>Hur många måltider vill du äta per dygn?</FormLabel>
+                <FormLabel>Vad kan jag som PT hjälpa dig med?</FormLabel>
                 <RadioGroup aria-label="gender" name="antalGånger">
                   <FormControlLabel
                     value="1"
-                    control={<Radio />}
-                    label="1-2 måltider"
+                    control={<Checkbox />}
+                    label="Gå upp/ned i vikt"
                   />
                   <FormControlLabel
                     value="2"
-                    control={<Radio />}
-                    label="2-3 måltider"
+                    control={<Checkbox />}
+                    label="Bygga muskler"
                   />
                   <FormControlLabel
                     value="3"
-                    control={<Radio />}
-                    label="4+ måltider"
+                    control={<Checkbox />}
+                    label="Hälsosam livsstil"
+                  />
+                  <FormControlLabel
+                    value="4"
+                    control={<Checkbox />}
+                    label="Komma igång med träningen"
+                  />
+                  <FormControlLabel
+                    value="5"
+                    control={<Checkbox />}
+                    label="Annat"
                   />
                 </RadioGroup>
               </FormControl>
@@ -185,7 +238,7 @@ function ContactMeCard() {
                 multiline
                 minRows={3}
                 maxRows={5}
-                label="Vad kan jag som coach hjälpa dig med?"
+                label="Annat"
                 value={message}
                 onChange={handleMessageChange}
                 color="text"
@@ -196,7 +249,7 @@ function ContactMeCard() {
               xs={12}
               md={12}
               style={{
-                alignSelf: 'center'
+                alignSelf: "center",
               }}
             >
               <Button type="submit" size="large" variant="contained">
@@ -207,7 +260,7 @@ function ContactMeCard() {
         </form>
       </CardContent>
     </Card>
-  )
+  );
 }
 
-export default ContactMe
+export default ContactMe;

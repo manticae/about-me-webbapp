@@ -1,31 +1,22 @@
-import React, { useEffect } from 'react'
-import { Box, Grid, Card, CardContent, Typography } from '@mui/material'
-import Aos from 'aos'
-import 'aos/dist/aos.css'
+import React, { useEffect } from "react";
+import { Box, Grid, Card, CardContent, Typography } from "@mui/material";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function MyStory() {
   useEffect(() => {
-    Aos.init({ duration: 1200 })
-  }, [])
-  const video = process.env.PUBLIC_URL + '/workoutVideo1.mp4'
+    Aos.init({ duration: 1200 });
+  }, []);
+  const video = process.env.PUBLIC_URL + "/workoutVideo1.mp4";
 
   return (
     <Box
       style={{
-        flexGrow: 1
+        flexGrow: 1,
       }}
     >
-      <Grid container columns={16}>
-        <Grid
-          item
-          xs={16}
-          md={8}
-          style={{
-            alignSelf: 'center',
-            backgroundColor: '#c3ccce',
-            height: '700px'
-          }}
-        >
+      <Grid container columns={2}>
+        <Grid item xs={2} md={1}>
           <video
             autoPlay
             muted
@@ -33,30 +24,30 @@ function MyStory() {
             playsInline
             src={video}
             style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover'
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
             }}
           ></video>
         </Grid>
         <Grid
           item
-          xs={16}
-          md={8}
+          xs={2}
+          md={1}
           style={{
-            alignSelf: 'center',
-            height: '700px',
-            backgroundColor: '#c3ccce'
+            alignSelf: "center",
+            height: "auto",
+            backgroundColor: "#c3ccce",
           }}
         >
           <Card
             elevation={0}
             square
             style={{
-              display: 'flex',
-              flexDirection: 'column',
-              height: '100%',
-              width: '100%'
+              display: "flex",
+              flexDirection: "column",
+              height: "100%",
+              width: "100%",
             }}
           >
             <CardContent>
@@ -114,7 +105,7 @@ function MyStory() {
                 variant="h5"
                 data-aos="fade-in"
                 data-aos-duration="4000"
-                sx={{ mt: 2, mx: 3, display: 'flex', justifyContent: 'center' }}
+                sx={{ mt: 2, mx: 3, display: "flex", justifyContent: "center" }}
               >
                 - Hanna
               </Typography>
@@ -123,7 +114,7 @@ function MyStory() {
         </Grid>
       </Grid>
     </Box>
-  )
+  );
 }
 
-export default MyStory
+export default MyStory;
