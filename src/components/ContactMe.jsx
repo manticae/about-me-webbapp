@@ -16,47 +16,74 @@ import {
   FormControlLabel,
 } from "@mui/material";
 
-const genders = [
-  "Man", "Kvinna", "Annat"
-]
+import { alpha, styled } from "@mui/material/styles";
+
+import Aos from "aos";
+
+import "aos/dist/aos.css";
+
+const CustomTextField = styled(TextField)({
+  "&	.MuiTextField-root": {
+    "& input": {
+      color: "green",
+    },
+  },
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "whitesmoke",
+    },
+    "&:hover fieldset": {
+      borderColor: "white",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "white",
+    },
+    "&.Mui fieldset": {
+      borderColor: "white",
+    },
+  },
+});
+
+const genders = ["Man", "Kvinna", "Annat"];
 function ContactMe() {
+  React.useEffect(() => {
+    Aos.init({});
+  }, []);
+  const image = process.env.PUBLIC_URL + "/hanna2.jpg";
+
   return (
-    <Box name="contact-me-section">
-      <Box
-        sx={{ display: { xs: "none", md: "flex" } }}
-        style={{
+    <Grid container columns={2}>
+      <Grid
+        item
+        xs={2}
+        md={1}
+        name="contact-me-section"
+        sx={{
           flexGrow: 1,
-          minHeight: "650px",
+          px: { xs: "10px", md: "100px" },
+          py: "10px",
           background:
             "linear-gradient(0deg, rgba(222,167,144,1) 0%, rgba(234,198,183,1) 100%)",
-          alignItems: "center",
-        }}
-      >
-        <Grid container columns={12} alignItems="center">
-          <Grid item md={2}></Grid>
-
-          <Grid item md={8}>
-            <ContactMeCard />
-          </Grid>
-        </Grid>
-      </Box>
-      <Box
-        sx={{ display: { xs: "flex", md: "none" } }}
-        style={{
-          flexGrow: 1,
-          minHeight: "650px",
 
           alignItems: "center",
         }}
       >
-        <Grid container columns={12} alignItems="center">
-          <Grid item md={1}></Grid>
-          <Grid item xs={12} md={5}>
-            <ContactMeCard />
-          </Grid>
-        </Grid>
-      </Box>
-    </Box>
+        <ContactMeCard data-aos="fade-right"></ContactMeCard>
+      </Grid>
+      <Grid
+        item
+        xs={2}
+        md={1}
+        sx={{
+          height: "auto",
+          backgroundRepeat: "no-repeat",
+          backgroundImage: `
+          url(${image})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      ></Grid>
+    </Grid>
   );
 }
 
@@ -101,7 +128,11 @@ function ContactMeCard() {
     console.log(message);
   };
   return (
-    <Card elevation={0}>
+    <Card
+      elevation={0}
+      data-aos="fade-right"
+      sx={{ backgroundColor: "transparent" }}
+    >
       <CardContent>
         <Typography
           align="center"
@@ -114,23 +145,23 @@ function ContactMeCard() {
         <form onSubmit={handleSubmit}>
           <Grid container columns={12} spacing={2}>
             <Grid item xs={12} md={4}>
-              <TextField
+              <CustomTextField
                 fullWidth
                 label="Förnamn"
                 value={name}
                 onChange={handleNameChange}
-                color="text"
+                color="white"
                 margin="dense"
               />
-              <TextField
+              <CustomTextField
                 fullWidth
                 label="Efternamn"
                 value={lastName}
                 onChange={handleLastNameChange}
-                color="text"
+                color="white"
                 margin="dense"
               />
-              <TextField
+              <CustomTextField
                 fullWidth
                 label="Ålder"
                 type="number"
@@ -138,9 +169,9 @@ function ContactMeCard() {
                 value={age}
                 onChange={handleAgeChange}
                 color="text"
-                    margin="dense"
+                margin="dense"
               />
-                            <TextField
+              <CustomTextField
                 fullWidth
                 label="Kön"
                 select
@@ -148,17 +179,14 @@ function ContactMeCard() {
                 color="text"
                 margin="dense"
               >
-                        {genders.map((gender) => (
-            <MenuItem key={gender} value={gender}>
-              {gender}
-            </MenuItem>
-          ))}
+                {genders.map((gender) => (
+                  <MenuItem key={gender} value={gender}>
+                    {gender}
+                  </MenuItem>
+                ))}
+              </CustomTextField>
 
-              </TextField>
-
-
-
-              <TextField
+              <CustomTextField
                 fullWidth
                 label="Telefonnummer"
                 value={phoneNumber}
@@ -166,7 +194,7 @@ function ContactMeCard() {
                 color="text"
                 margin="dense"
               />
-              <TextField
+              <CustomTextField
                 fullWidth
                 label="E-post"
                 value={email}

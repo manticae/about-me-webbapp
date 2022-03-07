@@ -12,8 +12,6 @@ import { scroller } from "react-scroll";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-import Div100vh from "react-div-100vh";
-
 const handleContactMeClick = () => {
   scroller.scrollTo("contact-me-section", {
     duration: 800,
@@ -29,25 +27,26 @@ function AboutMe() {
   }, []);
   return (
     <Grid container columns={2}>
-      <Grid item xs={2} md={1}>
-        <Box
-          sx={{
-            height: "inherit",
-            backgroundRepeat: "no-repeat",
-            backgroundImage: `
+      <Grid
+        item
+        xs={2}
+        md={1}
+        sx={{
+          height: "100vh",
+          backgroundRepeat: "no-repeat",
+          backgroundImage: `
           url(${image})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        ></Box>
-      </Grid>
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      ></Grid>
       <Grid item xs={2} md={1}>
         <Card
           elevation={0}
           square
           sx={{
             px: "5vw",
-            height: { xs: "auto", md: "100vh" },
+            height: { xs: "80vh", md: "100vh" },
             display: "flex",
             paddingY: { xs: "10px", md: "0px" },
             flexDirection: "column",
