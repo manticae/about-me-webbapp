@@ -23,11 +23,6 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 const CustomTextField = styled(TextField)({
-  "&	.MuiTextField-root": {
-    "& input": {
-      color: "green",
-    },
-  },
   "& .MuiOutlinedInput-root": {
     "& fieldset": {
       borderColor: "whitesmoke",
@@ -54,12 +49,13 @@ function ContactMe() {
   return (
     <Grid container columns={2}>
       <Grid
+        container
         item
         xs={2}
         md={1}
         name="contact-me-section"
         sx={{
-          flexGrow: 1,
+          justifyContent: "center",
           px: { xs: "10px", md: "100px" },
           py: "10px",
           background:
@@ -94,6 +90,7 @@ function ContactMeCard() {
   const [phoneNumber, setphoneNumber] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [message, setMessage] = React.useState("");
+  const [sex, setSex] = React.useState("");
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -105,6 +102,10 @@ function ContactMeCard() {
 
   const handleAgeChange = (event) => {
     setAge(event.target.value);
+  };
+
+  const handleSexChange = (event) => {
+    setSex(event.target.value);
   };
 
   const handlePhoneNumberChange = (event) => {
@@ -131,13 +132,21 @@ function ContactMeCard() {
     <Card
       elevation={0}
       data-aos="fade-right"
-      sx={{ backgroundColor: "transparent" }}
+      sx={{
+        backgroundColor: "transparent",
+        maxWidth: { xs: "500px", md: "100%" },
+      }}
     >
       <CardContent>
         <Typography
           align="center"
-          variant="h4"
-          sx={{ display: "block", pb: 2 }}
+          color="white.main"
+          sx={{
+            fontWeight: "bold",
+
+            fontSize: { xs: "24px", md: "3vw" },
+            letterSpacing: "2px",
+          }}
         >
           Intresseanmälan
         </Typography>
@@ -165,18 +174,18 @@ function ContactMeCard() {
                 fullWidth
                 label="Ålder"
                 type="number"
-                error={age < 16 || age > 99}
                 value={age}
                 onChange={handleAgeChange}
-                color="text"
+                color="white"
                 margin="dense"
               />
               <CustomTextField
                 fullWidth
                 label="Kön"
                 select
-                onChange={handleAgeChange}
-                color="text"
+                value={sex}
+                onChange={handleSexChange}
+                color="white"
                 margin="dense"
               >
                 {genders.map((gender) => (
@@ -191,7 +200,7 @@ function ContactMeCard() {
                 label="Telefonnummer"
                 value={phoneNumber}
                 onChange={handlePhoneNumberChange}
-                color="text"
+                color="white"
                 margin="dense"
               />
               <CustomTextField
@@ -199,28 +208,30 @@ function ContactMeCard() {
                 label="E-post"
                 value={email}
                 onChange={handleEmailChange}
-                color="text"
+                color="white"
                 margin="dense"
               />
             </Grid>
 
             <Grid item xs={12} md={4}>
               <FormControl>
-                <FormLabel>Hur många gånger i veckan vill du träna?</FormLabel>
+                <FormLabel color="white" focused sx={{ fontSize: "18px" }}>
+                  Hur många gånger i veckan vill du träna?
+                </FormLabel>
                 <RadioGroup aria-label="gender" name="antalGånger">
                   <FormControlLabel
                     value="1"
-                    control={<Radio />}
+                    control={<Radio color="white" />}
                     label="1-2 gånger"
                   />
                   <FormControlLabel
                     value="2"
-                    control={<Radio />}
+                    control={<Radio color="white" />}
                     label="2-4 gånger"
                   />
                   <FormControlLabel
                     value="3"
-                    control={<Radio />}
+                    control={<Radio color="white" />}
                     label="4-7 gånger"
                   />
                 </RadioGroup>
@@ -229,31 +240,33 @@ function ContactMeCard() {
 
             <Grid item xs={12} md={4}>
               <FormControl>
-                <FormLabel>Vad kan jag som PT hjälpa dig med?</FormLabel>
+                <FormLabel color="white" focused sx={{ fontSize: "18px" }}>
+                  Vad kan jag som PT hjälpa dig med?
+                </FormLabel>
                 <RadioGroup aria-label="gender" name="antalGånger">
                   <FormControlLabel
                     value="1"
-                    control={<Checkbox />}
+                    control={<Checkbox color="white" />}
                     label="Gå upp/ned i vikt"
                   />
                   <FormControlLabel
                     value="2"
-                    control={<Checkbox />}
+                    control={<Checkbox color="white" />}
                     label="Bygga muskler"
                   />
                   <FormControlLabel
                     value="3"
-                    control={<Checkbox />}
+                    control={<Checkbox color="white" />}
                     label="Hälsosam livsstil"
                   />
                   <FormControlLabel
                     value="4"
-                    control={<Checkbox />}
+                    control={<Checkbox color="white" />}
                     label="Komma igång med träningen"
                   />
                   <FormControlLabel
                     value="5"
-                    control={<Checkbox />}
+                    control={<Checkbox color="white" />}
                     label="Annat"
                   />
                 </RadioGroup>
@@ -261,7 +274,7 @@ function ContactMeCard() {
             </Grid>
 
             <Grid item xs={12} md={12}>
-              <TextField
+              <CustomTextField
                 fullWidth
                 multiline
                 minRows={3}
@@ -269,7 +282,7 @@ function ContactMeCard() {
                 label="Annat"
                 value={message}
                 onChange={handleMessageChange}
-                color="text"
+                color="white"
               />
             </Grid>
             <Grid
