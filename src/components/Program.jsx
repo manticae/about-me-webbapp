@@ -1,26 +1,52 @@
-import * as React from "react";
-import { Card, CardContent, Typography, CardMedia, Box } from "@mui/material";
+import * as React from 'react'
+import { Card, CardContent, Typography, CardMedia, Box } from '@mui/material'
 
 function Program(props) {
   return (
     <Box
-      height={"550px"}
+      height={'550px'}
       style={{
-        display: "flex",
-        alignItems: "center",
+        display: 'flex',
+        alignItems: 'center'
       }}
     >
       <Box
         bgcolor={props.item.color}
-        height={"500px"}
+        height={'500px'}
         style={{
-          flexGrow: 1,
-
-          display: "flex",
-          alignItems: "center",
+          // flexGrow: 1,
+          flex: 1,
+          // flexGrow: 1,
+          display: 'flex',
+          // alignItems: 'center',
+          // justifyContent: 'end',
+          backgroundRepeat: 'no-repeat',
+          backgroundImage: `url(${props.item.image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+          // display: "flex",
+          // alignItems: "center",
         }}
       >
         <Box
+          bgcolor={props.item.color}
+          sx={{
+            margin: 2,
+            padding: 1,
+            height: 'fit-content',
+            borderRadius: 1
+          }}
+        >
+          <Typography
+            // style={{ backgroundColor: props.item.color }}
+            align="center"
+            variant="h5"
+            color={'#FFFFFF'}
+          >
+            {props.item.name}
+          </Typography>
+        </Box>
+        {/* <Box
           height={"350px"}
           bgcolor={props.item.color}
           style={{
@@ -49,11 +75,11 @@ function Program(props) {
               </Typography>
               <Typography variant="body1">{props.item.description}</Typography>
             </CardContent>
-          </Card>
-        </Box>
+          </Card> 
+        </Box> */}
       </Box>
     </Box>
-  );
+  )
 }
 
-export default Program;
+export default Program
