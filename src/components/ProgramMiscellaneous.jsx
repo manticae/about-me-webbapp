@@ -1,254 +1,151 @@
-import React, { useEffect } from "react";
-import { Container, Grid, Card, Typography } from "@mui/material";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
-import DevicesIcon from "@mui/icons-material/Devices";
-import TimelineIcon from "@mui/icons-material/Timeline";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import CloudQueueIcon from "@mui/icons-material/CloudQueue";
-import Aos from "aos";
-import "aos/dist/aos.css";
+import React, { useEffect } from 'react'
+import { Container, Grid, Card, Typography, Link } from '@mui/material'
+import MailOutlineIcon from '@mui/icons-material/MailOutline'
+import InstagramIcon from '@mui/icons-material/Instagram'
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 function ProgramMiscellaneous() {
   useEffect(() => {
-    Aos.init({ duration: 500 });
-  }, []);
+    Aos.init({ duration: 3000 })
+  }, [])
   return (
-    <Container maxWidth="lg">
-      <Grid container columns={18} spacing={2} justifyContent={"space-evenly"}>
+    <Container maxWidth="lg" sx={{ py: 5 }}>
+      <Grid container columns={18} spacing={2} justifyContent={'space-evenly'}>
         <Grid
           item
-          xs={9}
+          xs={18}
           md={6}
           style={{
-            alignSelf: "center",
+            alignSelf: 'center'
           }}
         >
           <Card
             data-aos="fade-in"
+            data-aos-anchor-placement="bottom-bottom"
             elevation={0}
             style={{
-              width: "100%",
-              height: "200px",
+              width: '100%',
+              height: '200px'
             }}
           >
             <Typography align="center" variant="h4">
               <MailOutlineIcon
                 color="primary"
-                style={{ transform: "scale(2.0)" }}
+                style={{ transform: 'scale(2.0)' }}
               />
             </Typography>
             <Typography
               align="center"
               variant="h6"
-              style={{ paddingTop: "15px" }}
+              style={{ paddingTop: '15px' }}
             >
               Mail
             </Typography>
             <Typography
               align="center"
               variant="body2"
-              style={{ paddingTop: "15px" }}
+              style={{ paddingTop: '15px' }}
             >
-              Mail-kommunikation tillgängligt hela tiden med svar innom en dag
+              Vid frågor och funderingar, maila hanna.ljungsten@exemple.se
             </Typography>
           </Card>
         </Grid>
         <Grid
           item
-          xs={9}
+          xs={18}
           md={6}
           style={{
-            alignSelf: "center",
+            alignSelf: 'center'
           }}
         >
           <Card
             elevation={0}
             data-aos="fade-in"
+            data-aos-anchor-placement="bottom-bottom"
             style={{
-              width: "100%",
-              height: "200px",
+              width: '100%',
+              height: '200px'
             }}
           >
             <Typography align="center" variant="h4">
-              <PhoneIphoneIcon
+              <InstagramIcon
                 color="primary"
-                style={{ transform: "scale(2.0)" }}
+                style={{ transform: 'scale(2.0)' }}
               />
             </Typography>
             <Typography
               align="center"
               variant="h6"
-              style={{ paddingTop: "15px" }}
+              style={{ paddingTop: '15px' }}
             >
-              Telefontid
+              Instagram
             </Typography>
             <Typography
               align="center"
               variant="body2"
-              style={{ paddingTop: "15px" }}
+              style={{ paddingTop: '15px' }}
             >
-              Tillgänglig på telefon under vanliga arbetstider. Perfekt vid
-              snabba frågor
+              Följ mig på instagram för daglig inspiration{' '}
+              <Link
+                href="https://instagram.com/hannaljungsten"
+                underline="none"
+              >
+                @hannaljungsten
+              </Link>{' '}
+              <Link
+                href="https://instagram.com/fitnessbyhannalj"
+                underline="none"
+              >
+                @fitnessbyhannalj
+              </Link>
             </Typography>
           </Card>
         </Grid>
         <Grid
           item
-          xs={9}
+          xs={18}
           md={6}
           style={{
-            alignSelf: "center",
+            alignSelf: 'center'
           }}
         >
           <Card
             elevation={0}
             data-aos="fade-in"
+            data-aos-anchor-placement="bottom-bottom"
             style={{
-              width: "100%",
-              height: "200px",
+              width: '100%',
+              height: '200px'
             }}
           >
             <Typography align="center" variant="h4">
-              <DevicesIcon
+              <FavoriteBorderOutlinedIcon
                 color="primary"
-                style={{ transform: "scale(2.0)" }}
+                style={{ transform: 'scale(2.0)' }}
               />
             </Typography>
             <Typography
               align="center"
               variant="h6"
-              style={{ paddingTop: "15px" }}
+              style={{ paddingTop: '15px' }}
             >
-              Möten
+              Samarbeten
             </Typography>
             <Typography
               align="center"
               variant="body2"
-              style={{ paddingTop: "15px" }}
+              style={{ paddingTop: '15px' }}
             >
-              Regelbundna digitala möten och uppföljningar
-            </Typography>
-          </Card>
-        </Grid>
-        <Grid
-          item
-          xs={9}
-          md={6}
-          style={{
-            alignSelf: "center",
-          }}
-        >
-          <Card
-            data-aos="fade-in"
-            elevation={0}
-            style={{
-              width: "100%",
-              height: "200px",
-            }}
-          >
-            <Typography align="center" variant="h4">
-              <TimelineIcon
-                color="primary"
-                style={{ transform: "scale(2.0)" }}
-              />
-            </Typography>
-            <Typography
-              align="center"
-              variant="h6"
-              style={{ paddingTop: "15px" }}
-            >
-              Statistik
-            </Typography>
-            <Typography
-              align="center"
-              variant="body2"
-              style={{ paddingTop: "15px" }}
-            >
-              Utvärderingar, statistik och progression
-            </Typography>
-          </Card>
-        </Grid>
-        <Grid
-          item
-          xs={9}
-          md={6}
-          style={{
-            alignSelf: "center",
-          }}
-        >
-          <Card
-            data-aos="fade-in"
-            elevation={0}
-            style={{
-              width: "100%",
-              height: "200px",
-            }}
-          >
-            <Typography align="center" variant="h4">
-              <AccessTimeIcon
-                color="primary"
-                style={{ transform: "scale(2.0)" }}
-              />
-            </Typography>
-            <Typography
-              align="center"
-              variant="h6"
-              style={{ paddingTop: "15px" }}
-            >
-              Lorem ipsum
-            </Typography>
-            <Typography
-              align="center"
-              variant="body2"
-              style={{ paddingTop: "15px" }}
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </Typography>
-          </Card>
-        </Grid>
-        <Grid
-          item
-          xs={9}
-          md={6}
-          style={{
-            alignSelf: "center",
-          }}
-        >
-          <Card
-            data-aos="fade-in"
-            elevation={0}
-            style={{
-              width: "100%",
-              height: "200px",
-            }}
-          >
-            <Typography align="center" variant="h4">
-              <CloudQueueIcon
-                color="primary"
-                style={{ transform: "scale(2.0)" }}
-              />
-            </Typography>
-            <Typography
-              align="center"
-              variant="h6"
-              style={{ paddingTop: "15px" }}
-            >
-              Lorem ipsum
-            </Typography>
-            <Typography
-              align="center"
-              variant="body2"
-              style={{ paddingTop: "15px" }}
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consectetur adipisicing elit.
+              Ambassadör för Swedish Supplement. Kontakta mig för mer
+              information
             </Typography>
           </Card>
         </Grid>
       </Grid>
     </Container>
-  );
+  )
 }
 
-export default ProgramMiscellaneous;
+export default ProgramMiscellaneous
