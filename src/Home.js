@@ -45,7 +45,7 @@ function Home() {
         <AboutMe />
         {/* <Spacer /> */}
         {/* <TheProcess /> */}
-        <Spacer />
+        {/* <Spacer /> */}
         <ProgramDescriptions />
         <Spacer />
         <ProgramMiscellaneous />

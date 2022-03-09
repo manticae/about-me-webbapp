@@ -12,7 +12,7 @@ function Program(props) {
     >
       <Box
         bgcolor={props.item.color}
-        height={'500px'}
+        height={'550px'}
         style={{
           // flexGrow: 1,
           flex: 1,
