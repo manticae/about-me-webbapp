@@ -1,59 +1,49 @@
-import * as React from "react";
-import { Card, CardContent, Typography, CardMedia, Box } from "@mui/material";
+import * as React from 'react'
+import { Card, CardContent, Typography, Box, Divider } from '@mui/material'
 
 function Program(props) {
   return (
     <Box
-      height={"550px"}
+      bgcolor={props.item.color}
+      height={'700px'}
       style={{
-        display: "flex",
-        alignItems: "center",
+        flexGrow: 1,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundImage: `url(${props.item.image})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
       }}
     >
-      <Box
-        bgcolor={props.item.color}
-        height={"500px"}
+      <Card
+        align="center"
         style={{
-          flexGrow: 1,
-
-          display: "flex",
-          alignItems: "center",
+          width: '80%',
+          background:
+            'rgb(204, 204, 204)' /* Fallback for older browsers without RGBA-support */,
+          // eslint-disable-next-line no-dupe-keys
+          background: 'rgba(234,198,183, 0.8'
         }}
+        elevation={0}
       >
-        <Box
-          height={"350px"}
-          bgcolor={props.item.color}
-          style={{
-            flexGrow: 1,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "end",
-            backgroundRepeat: "no-repeat",
-            backgroundImage: `url(${props.item.image})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <Card
-            style={{
-              top: "0px",
-              left: "2rem",
-              maxWidth: "250px",
-              height: "100%",
-              position: "absolute",
+        <CardContent>
+          <Typography
+            align="center"
+            variant="h4"
+            color="white.main"
+            sx={{
+              letterSpacing: '2px'
             }}
           >
-            <CardContent>
-              <Typography align="center" variant="h5">
-                {props.item.name}
-              </Typography>
-              <Typography variant="body1">{props.item.description}</Typography>
-            </CardContent>
-          </Card>
-        </Box>
-      </Box>
+            {props.item.name}
+          </Typography>
+          <Divider color="white" />
+        </CardContent>
+      </Card>
     </Box>
-  );
+  )
 }
 
-export default Program;
+export default Program
