@@ -208,6 +208,7 @@ function ProgramDescriptions() {
           duration="1000"
           interval="10000"
           navButtonsAlwaysVisible="true"
+          swipe={false}
         >
           {items.map((item, i) => (
             <Program key={i + item.name} item={item} />

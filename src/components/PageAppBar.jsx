@@ -25,15 +25,6 @@ function PageAppBar() {
     setAnchorElNav(null)
   }
 
-  const handleHowItWorksClick = () => {
-    handleCloseNavMenu()
-    scroller.scrollTo('the-process-section', {
-      duration: 800,
-      delay: 0,
-      smooth: 'easeInOutQuart'
-    })
-  }
-
   const handleContactMeClick = () => {
     handleCloseNavMenu()
     scroller.scrollTo('contact-me-section', {
@@ -41,10 +32,6 @@ function PageAppBar() {
       delay: 0,
       smooth: 'easeInOutQuart'
     })
-  }
-
-  const handleInstagramClick = () => {
-    console.log('Instagram')
   }
 
   return (
@@ -83,8 +70,14 @@ function PageAppBar() {
             onClose={handleCloseNavMenu}
           >
             <MenuItem onClick={handleContactMeClick}>Intresseanmälan</MenuItem>
-            <MenuItem onClick={handleInstagramClick}>
-              <InstagramIcon /> Instagram
+            <MenuItem>
+              <Button
+                href="https://instagram.com/hannaljungsten"
+                startIcon={<InstagramIcon />}
+                style={{ color: 'black' }}
+              >
+                Instagram
+              </Button>
             </MenuItem>
           </Menu>
         </Box>
@@ -140,8 +133,8 @@ function PageAppBar() {
           }}
         >
           <Button
+            href="https://instagram.com/hannaljungsten"
             sx={{ display: { xs: 'none', md: 'flex' } }}
-            onClick={handleInstagramClick}
             startIcon={<InstagramIcon />}
             color={'white'}
           >

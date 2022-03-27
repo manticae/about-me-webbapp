@@ -1,11 +1,10 @@
-import * as React from "react";
+import * as React from 'react'
 import {
   TextField,
   Typography,
   Button,
   Grid,
   MenuItem,
-  Box,
   Card,
   CardContent,
   Checkbox,
@@ -13,38 +12,39 @@ import {
   RadioGroup,
   FormControl,
   FormLabel,
-  FormControlLabel,
-} from "@mui/material";
+  FormControlLabel
+} from '@mui/material'
+import emailjs from 'emailjs-com'
 
-import { alpha, styled } from "@mui/material/styles";
+import { styled } from '@mui/material/styles'
 
-import Aos from "aos";
+import Aos from 'aos'
 
-import "aos/dist/aos.css";
+import 'aos/dist/aos.css'
 
 const CustomTextField = styled(TextField)({
-  "& .MuiOutlinedInput-root": {
-    "& fieldset": {
-      borderColor: "whitesmoke",
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: 'whitesmoke'
     },
-    "&:hover fieldset": {
-      borderColor: "white",
+    '&:hover fieldset': {
+      borderColor: 'white'
     },
-    "&.Mui-focused fieldset": {
-      borderColor: "white",
+    '&.Mui-focused fieldset': {
+      borderColor: 'white'
     },
-    "&.Mui fieldset": {
-      borderColor: "white",
-    },
-  },
-});
+    '&.Mui fieldset': {
+      borderColor: 'white'
+    }
+  }
+})
 
-const genders = ["Man", "Kvinna", "Annat"];
+const genders = ['Man', 'Kvinna', 'Annat']
 function ContactMe() {
   React.useEffect(() => {
-    Aos.init({});
-  }, []);
-  const image = process.env.PUBLIC_URL + "/hanna2.jpg";
+    Aos.init({})
+  }, [])
+  const image = process.env.PUBLIC_URL + '/hanna2.jpg'
 
   return (
     <Grid container columns={2}>
@@ -55,13 +55,13 @@ function ContactMe() {
         md={1}
         name="contact-me-section"
         sx={{
-          justifyContent: "center",
-          px: { xs: "10px", md: "100px" },
-          py: "10px",
+          justifyContent: 'center',
+          px: { xs: '10px', md: '100px' },
+          py: '10px',
           background:
-            "linear-gradient(0deg, rgba(222,167,144,1) 0%, rgba(234,198,183,1) 100%)",
+            'linear-gradient(0deg, rgba(222,167,144,1) 0%, rgba(234,198,183,1) 100%)',
 
-          alignItems: "center",
+          alignItems: 'center'
         }}
       >
         <ContactMeCard data-aos="fade-right"></ContactMeCard>
@@ -71,70 +71,79 @@ function ContactMe() {
         xs={2}
         md={1}
         sx={{
-          height: "auto",
-          backgroundRepeat: "no-repeat",
+          height: 'auto',
+          backgroundRepeat: 'no-repeat',
           backgroundImage: `
           url(${image})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
         }}
       ></Grid>
     </Grid>
-  );
+  )
 }
 
 function ContactMeCard() {
-  const [name, setName] = React.useState("");
-  const [lastName, setLastName] = React.useState("");
-  const [age, setAge] = React.useState("");
-  const [phoneNumber, setphoneNumber] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [message, setMessage] = React.useState("");
-  const [sex, setSex] = React.useState("");
+  const [name, setName] = React.useState('')
+  const [lastName, setLastName] = React.useState('')
+  const [age, setAge] = React.useState('')
+  const [phoneNumber, setphoneNumber] = React.useState('')
+  const [email, setEmail] = React.useState('')
+  const [message, setMessage] = React.useState('')
+  const [sex, setSex] = React.useState('')
 
   const handleNameChange = (event) => {
-    setName(event.target.value);
-  };
+    setName(event.target.value)
+  }
 
   const handleLastNameChange = (event) => {
-    setLastName(event.target.value);
-  };
+    setLastName(event.target.value)
+  }
 
   const handleAgeChange = (event) => {
-    setAge(event.target.value);
-  };
+    setAge(event.target.value)
+  }
 
   const handleSexChange = (event) => {
-    setSex(event.target.value);
-  };
+    setSex(event.target.value)
+  }
 
   const handlePhoneNumberChange = (event) => {
-    setphoneNumber(event.target.value);
-  };
+    setphoneNumber(event.target.value)
+  }
 
   const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
+    setEmail(event.target.value)
+  }
 
   const handleMessageChange = (event) => {
-    setMessage(event.target.value);
-  };
+    setMessage(event.target.value)
+  }
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Submit");
-    console.log(name);
-    console.log(phoneNumber);
-    console.log(email);
-    console.log(message);
-  };
+    event.preventDefault()
+    emailjs.send(
+      'service_fx4cv5v',
+      'template_mvwhhki',
+      {
+        name: name,
+        lastName: lastName,
+        age: age,
+        phoneNumber: phoneNumber,
+        email: email,
+        sex: sex,
+        message: message
+      },
+      'eZoiXmss4YQkjaWBN'
+    )
+  }
   return (
     <Card
       elevation={0}
       data-aos="fade-right"
       sx={{
-        backgroundColor: "transparent",
-        maxWidth: { xs: "500px", md: "100%" },
+        backgroundColor: 'transparent',
+        maxWidth: { xs: '500px', md: '100%' }
       }}
     >
       <CardContent>
@@ -142,10 +151,10 @@ function ContactMeCard() {
           align="center"
           color="white.main"
           sx={{
-            fontWeight: "bold",
+            fontWeight: 'bold',
 
-            fontSize: { xs: "24px", md: "3vw" },
-            letterSpacing: "2px",
+            fontSize: { xs: '24px', md: '3vw' },
+            letterSpacing: '2px'
           }}
         >
           Intresseanmälan
@@ -215,7 +224,7 @@ function ContactMeCard() {
 
             <Grid item xs={12} md={4}>
               <FormControl>
-                <FormLabel color="white" focused sx={{ fontSize: "18px" }}>
+                <FormLabel color="white" focused sx={{ fontSize: '18px' }}>
                   Hur många gånger i veckan vill du träna?
                 </FormLabel>
                 <RadioGroup aria-label="gender" name="antalGånger">
@@ -240,7 +249,7 @@ function ContactMeCard() {
 
             <Grid item xs={12} md={4}>
               <FormControl>
-                <FormLabel color="white" focused sx={{ fontSize: "18px" }}>
+                <FormLabel color="white" focused sx={{ fontSize: '18px' }}>
                   Vad kan jag som PT hjälpa dig med?
                 </FormLabel>
                 <RadioGroup aria-label="gender" name="antalGånger">
@@ -290,7 +299,7 @@ function ContactMeCard() {
               xs={12}
               md={12}
               style={{
-                alignSelf: "center",
+                alignSelf: 'center'
               }}
             >
               <Button type="submit" size="large" variant="contained">
@@ -301,7 +310,7 @@ function ContactMeCard() {
         </form>
       </CardContent>
     </Card>
-  );
+  )
 }
 
-export default ContactMe;
+export default ContactMe
