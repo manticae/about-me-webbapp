@@ -28,7 +28,7 @@ function ProgramDescriptions() {
   }, [])
   const items = [
     {
-      name: 'Gå upp/ner i vikt',
+      name: 'Bygga muskler',
       color: '#f0f4e6',
       image: process.env.PUBLIC_URL + '/program1.jpg'
     },
@@ -41,6 +41,16 @@ function ProgramDescriptions() {
       name: 'Hälsosam livsstil',
       color: '#fdccdd',
       image: process.env.PUBLIC_URL + '/program3.jpg'
+    },
+    {
+      name: 'Gå upp/ner i vikt',
+      color: '#fdccdd',
+      image: process.env.PUBLIC_URL + '/program4.jpg'
+    },
+    {
+      name: 'Stärka en specifik muskelgrupp',
+      color: '#fdccdd',
+      image: process.env.PUBLIC_URL + '/hanna3.jpg'
     }
   ]
   return (
