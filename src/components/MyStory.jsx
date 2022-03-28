@@ -20,6 +20,7 @@ function MyStory() {
           xs={2}
           md={1}
           style={{
+            minHeight: '800px',
             flexGrow: 1,
             display: 'flex',
             alignItems: 'center',

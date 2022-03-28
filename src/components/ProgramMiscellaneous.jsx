@@ -48,7 +48,10 @@ function ProgramMiscellaneous() {
               variant="body2"
               style={{ paddingTop: '15px' }}
             >
-              Vid frågor och funderingar, maila hanna.ljungsten@exemple.se
+              Vid frågor och funderingar, maila:{' '}
+              <Link underline="none" href="mailto:hanna@ljungsten.se">
+                hanna@ljungsten.se
+              </Link>
             </Typography>
           </Card>
         </Grid>
