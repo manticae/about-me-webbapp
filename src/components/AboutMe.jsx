@@ -45,7 +45,7 @@ function AboutMe() {
           elevation={0}
           square
           sx={{
-            px: "5vw",
+            px: "4vw",
             height: { xs: "80vh", md: "100vh" },
             display: "flex",
             paddingY: { xs: "10px", md: "0px" },
@@ -59,7 +59,7 @@ function AboutMe() {
           <CardContent>
             <Typography
               data-aos="fade-right"
-              data-aos-delay="200"
+              data-aos-delay="100"
               data-aos-duration="1000"
               variant="h3"
               color="white.main"
@@ -74,7 +74,7 @@ function AboutMe() {
 
             <Typography
               data-aos="fade-left"
-              data-aos-delay="1200"
+              data-aos-delay="300"
               data-aos-duration="1000"
               variant="h3"
               color="white.main"
@@ -89,7 +89,7 @@ function AboutMe() {
 
             <Typography
               data-aos="fade-in"
-              data-aos-delay="2200"
+              data-aos-delay="400"
               data-aos-duration="1000"
               variant="body1"
               mt={2}
@@ -103,7 +103,7 @@ function AboutMe() {
           <CardActions sx={{ justifyContent: "center", paddingY: "16px" }}>
             <Button
               data-aos="zoom-in"
-              data-aos-delay="3000"
+              data-aos-delay="400"
               data-aos-duration="1000"
               onClick={handleContactMeClick}
               size="large"

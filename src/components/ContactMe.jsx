@@ -191,7 +191,7 @@ function ContactMeCard() {
               letterSpacing: '2px'
             }}
           >
-            Intresseanmälan
+            Intresseanmälan:
           </Typography>
 
           <form onSubmit={handleSubmit}>
