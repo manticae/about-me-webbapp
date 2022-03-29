@@ -112,7 +112,7 @@ function MyStory() {
                 data-aos-duration="4000"
                 sx={{ mt: 2, mx: 3, display: 'flex', justifyContent: 'center' }}
               >
-              - Hanna
+                / Hanna
               </Typography>
             </CardContent>
           </Card>
