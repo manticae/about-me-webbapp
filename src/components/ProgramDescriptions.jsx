@@ -77,9 +77,9 @@ function ProgramDescriptions() {
             <Typography variant="h4">
               Detta ingår i min online coachning
             </Typography>
-            <Typography variant="body1" color="text.secondary">
+            {/* <Typography variant="body1" color="text.secondary">
               En undertitel designad för att introducera till punktlistan
-            </Typography>
+            </Typography> */}
           </CardContent>
 
           <CardContent>
@@ -176,12 +176,12 @@ function ProgramDescriptions() {
               Veckovisa utmaningar.
             </Typography>
           </CardContent>
-          <CardContent>
+          {/* <CardContent>
             <Typography variant="body1">
               Mycket mer information får också plats här, som till exempel
               information om kost alternativ eller allergier i kostplaner osv
             </Typography>
-          </CardContent>
+          </CardContent> */}
 
           <CardActions>
             <Button
