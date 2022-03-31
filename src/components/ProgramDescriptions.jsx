@@ -33,7 +33,7 @@ function ProgramDescriptions() {
       image: process.env.PUBLIC_URL + '/program1.jpg'
     },
     {
-      name: 'Komma igång med träningen & förändra mindset',
+      name: 'Komma igång med träningen',
       color: '#9cb58e',
       image: process.env.PUBLIC_URL + '/program2.jpg'
     },

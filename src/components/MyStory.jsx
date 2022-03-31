@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Box, Grid, Card, CardContent, Typography } from '@mui/material'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import FavoriteBorderOutlined from '@mui/icons-material/FavoriteBorderOutlined'
 
 function MyStory() {
   useEffect(() => {
@@ -110,9 +111,19 @@ function MyStory() {
                 data-aos-anchor-placement="center-bottom"
                 data-aos="fade-in"
                 data-aos-duration="4000"
-                sx={{ mt: 2, mx: 3, display: 'flex', justifyContent: 'center' }}
+                sx={{
+                  mt: 2,
+                  mx: 3,
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center'
+                }}
               >
                 / Hanna
+                <FavoriteBorderOutlined
+                  color="primary"
+                  sx={{ ml: 1, transform: 'scale(1.5)' }}
+                />
               </Typography>
             </CardContent>
           </Card>

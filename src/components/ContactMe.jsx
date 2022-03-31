@@ -42,7 +42,7 @@ const CustomTextField = styled(TextField)({
   }
 })
 
-const genders = ['Man', 'Kvinna', 'Annat']
+const genders = ['Man', 'Kvinna']
 function ContactMe() {
   React.useEffect(() => {
     Aos.init({})
@@ -94,6 +94,14 @@ function ContactMeCard() {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [sex, setSex] = useState('')
+  const [trainingDays, setTrainingDays] = useState('')
+  const [help, setHelp] = useState([
+    { id: 1, value: 'Gå upp/ned i vikt', isChecked: false },
+    { id: 2, value: 'Bygga muskler', isChecked: false },
+    { id: 3, value: 'Hälsosam livsstil', isChecked: false },
+    { id: 4, value: 'Komma igång med träningen', isChecked: false },
+    { id: 5, value: 'Annat', isChecked: false }
+  ])
   const [errorMessage, setErrorMessage] = useState('')
   const [open, setOpen] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -126,10 +134,22 @@ function ContactMeCard() {
     setMessage(event.target.value)
   }
 
+  const handleCheckChange = (event) => {
+    const tempHelp = help.map((option) => {
+      if (option.value === event.target.value) {
+        return { ...option, isChecked: event.target.checked }
+      }
+      return option
+    })
+    setHelp(tempHelp)
+    console.log(tempHelp)
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault()
     if (
       !name ||
+      !trainingDays ||
       !lastName ||
       !age ||
       !phoneNumber ||
@@ -141,6 +161,11 @@ function ContactMeCard() {
     } else {
       setIsLoading(true)
       setErrorMessage(null)
+      // new Promise((resolve, reject) => {
+      //   setTimeout(() => {
+      //     resolve('foo')
+      //   }, 300)
+      // })
       emailjs
         .send(
           'service_fx4cv5v',
@@ -152,6 +177,15 @@ function ContactMeCard() {
             phoneNumber: phoneNumber,
             email: email,
             sex: sex,
+            trainingDays: trainingDays,
+            help: help
+              .reduce((prevArr, option) => {
+                if (option.isChecked) {
+                  prevArr.push(option.value)
+                }
+                return prevArr
+              }, [])
+              .join(', '),
             message: message
           },
           'eZoiXmss4YQkjaWBN'
@@ -166,6 +200,14 @@ function ContactMeCard() {
           setEmail('')
           setMessage('')
           setSex('')
+          setTrainingDays('')
+          setHelp([
+            { id: 1, value: 'Gå upp/ned i vikt', isChecked: false },
+            { id: 2, value: 'Bygga muskler', isChecked: false },
+            { id: 3, value: 'Hälsosam livsstil', isChecked: false },
+            { id: 4, value: 'Komma igång med träningen', isChecked: false },
+            { id: 5, value: 'Annat', isChecked: false }
+          ])
           setOpen(true)
         })
     }
@@ -261,19 +303,24 @@ function ContactMeCard() {
                   <FormLabel color="white" focused sx={{ fontSize: '18px' }}>
                     Hur många gånger i veckan vill du träna?
                   </FormLabel>
-                  <RadioGroup aria-label="gender" name="antalGånger">
+                  <RadioGroup
+                    aria-label="gender"
+                    name="antalGånger"
+                    value={trainingDays}
+                    onChange={(event) => setTrainingDays(event.target.value)}
+                  >
                     <FormControlLabel
-                      value="1"
+                      value="1-2 gånger"
                       control={<Radio color="white" />}
                       label="1-2 gånger"
                     />
                     <FormControlLabel
-                      value="2"
+                      value="2-4 gånger"
                       control={<Radio color="white" />}
                       label="2-4 gånger"
                     />
                     <FormControlLabel
-                      value="3"
+                      value="4-7 gånger"
                       control={<Radio color="white" />}
                       label="4-7 gånger"
                     />
@@ -286,32 +333,22 @@ function ContactMeCard() {
                   <FormLabel color="white" focused sx={{ fontSize: '18px' }}>
                     Vad kan jag som PT hjälpa dig med?
                   </FormLabel>
-                  <RadioGroup aria-label="gender" name="antalGånger">
-                    <FormControlLabel
-                      value="1"
-                      control={<Checkbox color="white" />}
-                      label="Gå upp/ned i vikt"
-                    />
-                    <FormControlLabel
-                      value="2"
-                      control={<Checkbox color="white" />}
-                      label="Bygga muskler"
-                    />
-                    <FormControlLabel
-                      value="3"
-                      control={<Checkbox color="white" />}
-                      label="Hälsosam livsstil"
-                    />
-                    <FormControlLabel
-                      value="4"
-                      control={<Checkbox color="white" />}
-                      label="Komma igång med träningen"
-                    />
-                    <FormControlLabel
-                      value="5"
-                      control={<Checkbox color="white" />}
-                      label="Annat"
-                    />
+                  <RadioGroup name="help">
+                    {help.map((option) => (
+                      <FormControlLabel
+                        key={option.id}
+                        value={option.value}
+                        label={option.value}
+                        control={
+                          <Checkbox
+                            checked={option.isChecked}
+                            // isChecked={option.isChecked}
+                            color="white"
+                            onChange={handleCheckChange}
+                          />
+                        }
+                      />
+                    ))}
                   </RadioGroup>
                 </FormControl>
               </Grid>
