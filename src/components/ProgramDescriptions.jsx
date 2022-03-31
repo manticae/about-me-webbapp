@@ -50,7 +50,7 @@ function ProgramDescriptions() {
     {
       name: 'Stärka en specifik muskelgrupp',
       color: '#fdccdd',
-      image: process.env.PUBLIC_URL + '/hanna3.jpg'
+      image: process.env.PUBLIC_URL + '/program5.jpg'
     }
   ]
   return (
