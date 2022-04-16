@@ -15,7 +15,8 @@ import {
   FormControlLabel,
   Dialog,
   CircularProgress,
-  CardActions
+  CardActions,
+  Link
 } from '@mui/material'
 import emailjs from 'emailjs-com'
 
@@ -105,6 +106,7 @@ function ContactMeCard() {
   const [errorMessage, setErrorMessage] = useState('')
   const [open, setOpen] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const [termsOfUseOpen, setTermsOfUseOpen] = useState(false)
 
   const handleNameChange = (event) => {
     setName(event.target.value)
@@ -342,7 +344,6 @@ function ContactMeCard() {
                         control={
                           <Checkbox
                             checked={option.isChecked}
-                            // isChecked={option.isChecked}
                             color="white"
                             onChange={handleCheckChange}
                           />
@@ -382,6 +383,16 @@ function ContactMeCard() {
                   </Button>
                 )}
                 {isLoading && <CircularProgress />}
+                <Typography fontSize={12} py={1}>
+                  Genom att trycka på skicka så godkänner du{' '}
+                  <Link
+                    underline="none"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => setTermsOfUseOpen(true)}
+                  >
+                    användarvillkoren
+                  </Link>
+                </Typography>
               </Grid>
             </Grid>
           </form>
@@ -402,6 +413,34 @@ function ContactMeCard() {
               }}
             >
               Toppen
+            </Button>
+          </CardActions>
+        </Card>
+      </Dialog>
+
+      <Dialog onClose={() => setTermsOfUseOpen(false)} open={termsOfUseOpen}>
+        <Card>
+          <CardContent>
+            <Typography>
+              Genom att skicka in en intresseanmälan så godkänner du att dina
+              personuppgifter behandlas av Manticae HB. Tjänsten använder sig av
+              emailJS och dess integritetspolicy kan läsas{' '}
+              <Link
+                underline="none"
+                href="https://www.emailjs.com/legal/privacy-policy/"
+              >
+                här
+              </Link>
+              .
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button
+              onClick={() => {
+                setTermsOfUseOpen(false)
+              }}
+            >
+              Tack då vet jag
             </Button>
           </CardActions>
         </Card>
