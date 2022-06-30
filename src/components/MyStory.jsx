@@ -27,7 +27,7 @@ function MyStory() {
             alignItems: 'center',
             justifyContent: 'center',
             backgroundRepeat: 'no-repeat',
-            backgroundImage: `url(${process.env.PUBLIC_URL + '/hanna3.jpg'})`,
+            backgroundImage: `url(${process.env.PUBLIC_URL + '/hanna4.jpg'})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
