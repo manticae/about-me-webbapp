@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/about-me-webbapp/static/css/main.fa4071bd.css",
-    "main.js": "/about-me-webbapp/static/js/main.39595e54.js",
-    "index.html": "/about-me-webbapp/index.html",
-    "main.fa4071bd.css.map": "/about-me-webbapp/static/css/main.fa4071bd.css.map",
-    "main.39595e54.js.map": "/about-me-webbapp/static/js/main.39595e54.js.map"
+    "main.css": "/mormor/static/css/main.fa4071bd.css",
+    "main.js": "/mormor/static/js/main.df4e5215.js",
+    "index.html": "/mormor/index.html",
+    "main.fa4071bd.css.map": "/mormor/static/css/main.fa4071bd.css.map",
+    "main.df4e5215.js.map": "/mormor/static/js/main.df4e5215.js.map"
   },
   "entrypoints": [
     "static/css/main.fa4071bd.css",
-    "static/js/main.39595e54.js"
+    "static/js/main.df4e5215.js"
   ]
 }
